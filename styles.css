@@ -240,8 +240,8 @@ select:focus {
   gap: 12px;
 }
 
-.full-row {
-  grid-column: 1 / -1;
+.right-column {
+  grid-column: 2;
 }
 
 .money-input {
@@ -559,6 +559,10 @@ td {
   .grid-2,
   .metrics {
     grid-template-columns: 1fr;
+  }
+
+  .right-column {
+    grid-column: 1;
   }
 
   .topbar,
