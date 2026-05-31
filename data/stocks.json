@@ -1,0 +1,5033 @@
+{
+  "stocks": [
+    {
+      "currency": "KRW",
+      "market": "KRX",
+      "name": "SK hynix",
+      "symbol": "000660",
+      "tags": [
+        "base"
+      ],
+      "yahoo": "000660.KS"
+    },
+    {
+      "currency": "KRW",
+      "market": "KRX",
+      "name": "Samsung Electronics",
+      "symbol": "005930",
+      "tags": [
+        "base"
+      ],
+      "yahoo": "005930.KS"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 70507646,
+      "market": "NasdaqGS",
+      "name": "American Airlines Group Inc.",
+      "rankWeeklyVolume": 9,
+      "source": "yahoo-most-actives",
+      "symbol": "AAL",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 425249300,
+      "yahoo": "AAL"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 11783678,
+      "market": "NasdaqGM",
+      "name": "Applied Optoelectronics, Inc.",
+      "rankWeeklyVolume": 164,
+      "source": "yahoo-most-actives",
+      "symbol": "AAOI",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 53777700,
+      "yahoo": "AAOI"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 56454230,
+      "market": "NasdaqGS",
+      "marketCap": 4583336181760,
+      "name": "Apple Inc.",
+      "rankMarketCap": 2,
+      "rankWeeklyVolume": 20,
+      "source": "yahoo-most-actives",
+      "symbol": "AAPL",
+      "tags": [
+        "base",
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 260304800,
+      "yahoo": "AAPL"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 384666140672,
+      "name": "AbbVie",
+      "rankMarketCap": 25,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "ABBV",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "ABBV"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 31677654,
+      "market": "NYSE",
+      "name": "Ambev S.A.",
+      "rankWeeklyVolume": 51,
+      "source": "yahoo-most-actives",
+      "symbol": "ABEV",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 159550300,
+      "yahoo": "ABEV"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 79120138240,
+      "name": "Airbnb",
+      "rankMarketCap": 152,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "ABNB",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "ABNB"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 21126364,
+      "market": "NYSE",
+      "marketCap": 149099200512,
+      "name": "Abbott Laboratories",
+      "rankMarketCap": 80,
+      "rankWeeklyVolume": 156,
+      "source": "yahoo-most-actives",
+      "symbol": "ABT",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 61874800,
+      "yahoo": "ABT"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 56702428,
+      "market": "NYSE",
+      "name": "Archer Aviation Inc.",
+      "rankWeeklyVolume": 11,
+      "source": "yahoo-most-actives",
+      "symbol": "ACHR",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 327856700,
+      "yahoo": "ACHR"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 13615056,
+      "market": "NYSE",
+      "name": "AECOM",
+      "rankWeeklyVolume": 199,
+      "source": "yahoo-most-actives",
+      "symbol": "ACM",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 23481300,
+      "yahoo": "ACM"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 104772681728,
+      "name": "Adobe",
+      "rankMarketCap": 107,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "ADBE",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "ADBE"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 201580969984,
+      "name": "Analog Devices",
+      "rankMarketCap": 54,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "ADI",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "ADI"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 88677048320,
+      "name": "Automatic Data Processing",
+      "rankMarketCap": 128,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "ADP",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "ADP"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 18160380,
+      "market": "NYSE",
+      "name": "American Eagle Outfitters, Inc.",
+      "rankWeeklyVolume": 181,
+      "source": "yahoo-most-actives",
+      "symbol": "AEO",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 46428100,
+      "yahoo": "AEO"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 68921786368,
+      "name": "American Electric Power",
+      "rankMarketCap": 178,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "AEP",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "AEP"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 13905845,
+      "market": "NasdaqGS",
+      "name": "AGNC Investment Corp.",
+      "rankWeeklyVolume": 138,
+      "source": "yahoo-most-actives",
+      "symbol": "AGNC",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 73085300,
+      "yahoo": "AGNC"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 58767212544,
+      "name": "Astera Labs",
+      "rankMarketCap": 197,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "ALAB",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "ALAB"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 357329371136,
+      "name": "Applied Materials",
+      "rankMarketCap": 30,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "AMAT",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "AMAT"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 21772067,
+      "market": "NasdaqGS",
+      "marketCap": 841552887808,
+      "name": "Advanced Micro Devices, Inc.",
+      "rankMarketCap": 13,
+      "rankWeeklyVolume": 48,
+      "source": "yahoo-most-actives",
+      "symbol": "AMD",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 162999300,
+      "yahoo": "AMD"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 181768355840,
+      "name": "Amgen",
+      "rankMarketCap": 64,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "AMGN",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "AMGN"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 87103365120,
+      "name": "American Tower",
+      "rankMarketCap": 132,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "AMT",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "AMT"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 54582943,
+      "market": "NasdaqGS",
+      "marketCap": 2911304417280,
+      "name": "Amazon.com, Inc.",
+      "rankMarketCap": 5,
+      "rankWeeklyVolume": 34,
+      "source": "yahoo-most-actives",
+      "symbol": "AMZN",
+      "tags": [
+        "base",
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 200955200,
+      "yahoo": "AMZN"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 200799748096,
+      "name": "Arista Networks",
+      "rankMarketCap": 55,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "ANET",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "ANET"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 62043291648,
+      "name": "Air Products and Chemicals",
+      "rankMarketCap": 192,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "APD",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "APD"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 183009673216,
+      "name": "Amphenol",
+      "rankMarketCap": 62,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "APH",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "APH"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 15482317,
+      "market": "NasdaqGS",
+      "name": "Applied Digital Corporation",
+      "rankWeeklyVolume": 89,
+      "source": "yahoo-most-actives",
+      "symbol": "APLD",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 112782500,
+      "yahoo": "APLD"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 74203570176,
+      "name": "Apollo Global Management",
+      "rankMarketCap": 162,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "APO",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "APO"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 205961166848,
+      "name": "AppLovin",
+      "rankMarketCap": 52,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "APP",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "APP"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 10389003,
+      "market": "NasdaqGS",
+      "name": "Arm Holdings plc",
+      "rankWeeklyVolume": 158,
+      "source": "yahoo-most-actives",
+      "symbol": "ARM",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 59017200,
+      "yahoo": "ARM"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 47834406,
+      "market": "NasdaqGS",
+      "name": "AST SpaceMobile, Inc.",
+      "rankWeeklyVolume": 36,
+      "source": "yahoo-most-actives",
+      "symbol": "ASTS",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 191941100,
+      "yahoo": "ASTS"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 44154102,
+      "market": "NasdaqGS",
+      "name": "Aurora Innovation, Inc.",
+      "rankWeeklyVolume": 47,
+      "source": "yahoo-most-actives",
+      "symbol": "AUR",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 163549800,
+      "yahoo": "AUR"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 41606320,
+      "market": "NasdaqGS",
+      "marketCap": 2115307700224,
+      "name": "Broadcom Inc.",
+      "rankMarketCap": 6,
+      "rankWeeklyVolume": 87,
+      "source": "yahoo-most-actives",
+      "symbol": "AVGO",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 113824800,
+      "yahoo": "AVGO"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 10359785,
+      "market": "NYSE",
+      "name": "Avantor, Inc.",
+      "rankWeeklyVolume": 171,
+      "source": "yahoo-most-actives",
+      "symbol": "AVTR",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 52101400,
+      "yahoo": "AVTR"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 215935860736,
+      "name": "American Express",
+      "rankMarketCap": 50,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "AXP",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "AXP"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 11151964,
+      "market": "NasdaqGS",
+      "name": "AXT, Inc.",
+      "rankWeeklyVolume": 183,
+      "source": "yahoo-most-actives",
+      "symbol": "AXTI",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 44206900,
+      "yahoo": "AXTI"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 11137559,
+      "market": "NYSE",
+      "name": "Barrick Mining Corporation",
+      "rankWeeklyVolume": 155,
+      "source": "yahoo-most-actives",
+      "symbol": "B",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 62682100,
+      "yahoo": "B"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 182216081408,
+      "name": "Boeing",
+      "rankMarketCap": 63,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "BA",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "BA"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 12448653,
+      "market": "NYSE",
+      "name": "Alibaba Group Holding Limited",
+      "rankWeeklyVolume": 177,
+      "source": "yahoo-most-actives",
+      "symbol": "BABA",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 49752700,
+      "yahoo": "BABA"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 52430331,
+      "market": "NYSE",
+      "marketCap": 366184071168,
+      "name": "Bank of America Corporation",
+      "rankMarketCap": 27,
+      "rankWeeklyVolume": 28,
+      "source": "yahoo-most-actives",
+      "symbol": "BAC",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 209125700,
+      "yahoo": "BAC"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 43463354,
+      "market": "NYSE",
+      "name": "BlackBerry Limited",
+      "rankWeeklyVolume": 21,
+      "source": "yahoo-most-actives",
+      "symbol": "BB",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 245926600,
+      "yahoo": "BB"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 21135303,
+      "market": "NYSE",
+      "name": "Banco Bradesco S.A.",
+      "rankWeeklyVolume": 63,
+      "source": "yahoo-most-actives",
+      "symbol": "BBD",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 140642700,
+      "yahoo": "BBD"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 10463707,
+      "market": "NYSE",
+      "marketCap": 81066500096,
+      "name": "Bloom Energy Corporation",
+      "rankMarketCap": 145,
+      "rankWeeklyVolume": 178,
+      "source": "yahoo-most-actives",
+      "symbol": "BE",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 49735400,
+      "yahoo": "BE"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 94143750144,
+      "name": "BNY Mellon (Bank of New York Mellon)",
+      "rankMarketCap": 118,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "BK",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "BK"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 129737891840,
+      "name": "Booking Holdings (Booking.com)",
+      "rankMarketCap": 88,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "BKNG",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "BKNG"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 63373348864,
+      "name": "Baker Hughes",
+      "rankMarketCap": 189,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "BKR",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "BKR"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 162511355904,
+      "name": "BlackRock",
+      "rankMarketCap": 71,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "BLK",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "BLK"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 35096842,
+      "market": "NYSE",
+      "name": "Bitmine Immersion Technologies, Inc.",
+      "rankWeeklyVolume": 53,
+      "source": "yahoo-most-actives",
+      "symbol": "BMNR",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 156090700,
+      "yahoo": "BMNR"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 116765638656,
+      "name": "Bristol-Myers Squibb",
+      "rankMarketCap": 98,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "BMY",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "BMY"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 11567668,
+      "market": "NYSE",
+      "name": "BP p.l.c.",
+      "rankWeeklyVolume": 145,
+      "source": "yahoo-most-actives",
+      "symbol": "BP",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 71255000,
+      "yahoo": "BP"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 1023384027136,
+      "name": "Berkshire Hathaway",
+      "rankMarketCap": 10,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "BRK.B",
+      "tags": [
+        "base",
+        "market_cap_top_200"
+      ],
+      "yahoo": "BRK-B"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 27382456,
+      "market": "NYSE",
+      "marketCap": 71805820928,
+      "name": "Boston Scientific Corporation",
+      "rankMarketCap": 169,
+      "rankWeeklyVolume": 49,
+      "source": "yahoo-most-actives",
+      "symbol": "BSX",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 161941300,
+      "yahoo": "BSX"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 15638114,
+      "market": "NYSE",
+      "name": "Baytex Energy Corp.",
+      "rankWeeklyVolume": 101,
+      "source": "yahoo-most-actives",
+      "symbol": "BTE",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 95520100,
+      "yahoo": "BTE"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 16921198,
+      "market": "NYSE American",
+      "name": "B2Gold Corp.",
+      "rankWeeklyVolume": 100,
+      "source": "yahoo-most-actives",
+      "symbol": "BTG",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 96209600,
+      "yahoo": "BTG"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 16198843,
+      "market": "NasdaqCM",
+      "name": "Webull Corporation",
+      "rankWeeklyVolume": 120,
+      "source": "yahoo-most-actives",
+      "symbol": "BULL",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 80874200,
+      "yahoo": "BULL"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 142967996416,
+      "name": "Blackstone Group",
+      "rankMarketCap": 85,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "BX",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "BX"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 214732144640,
+      "name": "Citigroup",
+      "rankMarketCap": 51,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "C",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "C"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 13412705,
+      "market": "NYSE",
+      "name": "Conagra Brands, Inc.",
+      "rankWeeklyVolume": 141,
+      "source": "yahoo-most-actives",
+      "symbol": "CAG",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 71854500,
+      "yahoo": "CAG"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 403418677248,
+      "name": "Caterpillar",
+      "rankMarketCap": 23,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "CAT",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "CAT"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 20302794,
+      "market": "NYSE",
+      "name": "Carnival Corporation Ltd.",
+      "rankWeeklyVolume": 70,
+      "source": "yahoo-most-actives",
+      "symbol": "CCL",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 132097300,
+      "yahoo": "CCL"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 39626011,
+      "market": "NYSE",
+      "name": "Coeur Mining, Inc.",
+      "rankWeeklyVolume": 99,
+      "source": "yahoo-most-actives",
+      "symbol": "CDE",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 97436700,
+      "yahoo": "CDE"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 103411687424,
+      "name": "Cadence Design Systems",
+      "rankMarketCap": 110,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "CDNS",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "CDNS"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 103932436480,
+      "name": "Constellation Energy",
+      "rankMarketCap": 108,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "CEG",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "CEG"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 73381289984,
+      "name": "The Cigna Group",
+      "rankMarketCap": 163,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "CI",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "CI"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 82043609088,
+      "name": "Ciena",
+      "rankMarketCap": 143,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "CIEN",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "CIEN"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 16793137,
+      "market": "NasdaqGS",
+      "name": "Cipher Digital Inc.",
+      "rankWeeklyVolume": 83,
+      "source": "yahoo-most-actives",
+      "symbol": "CIFR",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 115763600,
+      "yahoo": "CIFR"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 72121057280,
+      "name": "Colgate-Palmolive",
+      "rankMarketCap": 166,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "CL",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "CL"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 20921863,
+      "market": "NYSE",
+      "name": "Cleveland-Cliffs Inc.",
+      "rankWeeklyVolume": 77,
+      "source": "yahoo-most-actives",
+      "symbol": "CLF",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 120365400,
+      "yahoo": "CLF"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 22329128,
+      "market": "NasdaqCM",
+      "name": "CleanSpark, Inc.",
+      "rankWeeklyVolume": 74,
+      "source": "yahoo-most-actives",
+      "symbol": "CLSK",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 122745400,
+      "yahoo": "CLSK"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 19561740,
+      "market": "NasdaqGS",
+      "marketCap": 88841330688,
+      "name": "Comcast Corporation",
+      "rankMarketCap": 126,
+      "rankWeeklyVolume": 57,
+      "source": "yahoo-most-actives",
+      "symbol": "CMCSA",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 152005900,
+      "yahoo": "CMCSA"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 98836226048,
+      "name": "CME Group",
+      "rankMarketCap": 114,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "CME",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "CME"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 12143328,
+      "market": "NYSE",
+      "name": "Chipotle Mexican Grill, Inc.",
+      "rankWeeklyVolume": 104,
+      "source": "yahoo-most-actives",
+      "symbol": "CMG",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 94135400,
+      "yahoo": "CMG"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 89227870208,
+      "name": "Cummins",
+      "rankMarketCap": 125,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "CMI",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "CMI"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 116947484672,
+      "name": "Capital One",
+      "rankMarketCap": 97,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "COF",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "COF"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 70717751296,
+      "name": "Coherent Corp.",
+      "rankMarketCap": 172,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "COHR",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "COHR"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 138861150208,
+      "name": "ConocoPhillips",
+      "rankMarketCap": 86,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "COP",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "COP"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 12654015,
+      "market": "NasdaqGS",
+      "name": "Core Scientific, Inc.",
+      "rankWeeklyVolume": 126,
+      "source": "yahoo-most-actives",
+      "symbol": "CORZ",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 77541500,
+      "yahoo": "CORZ"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 424273805312,
+      "name": "Costco",
+      "rankMarketCap": 22,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "COST",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "COST"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 17768888,
+      "market": "NYSE",
+      "name": "Coupang, Inc.",
+      "rankWeeklyVolume": 106,
+      "source": "yahoo-most-actives",
+      "symbol": "CPNG",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 93176100,
+      "yahoo": "CPNG"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 16911847,
+      "market": "NasdaqGS",
+      "name": "Copart, Inc.",
+      "rankWeeklyVolume": 152,
+      "source": "yahoo-most-actives",
+      "symbol": "CPRT",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 65031100,
+      "yahoo": "CPRT"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 24660843,
+      "market": "NYSE",
+      "name": "Circle Internet Group",
+      "rankWeeklyVolume": 146,
+      "source": "yahoo-most-actives",
+      "symbol": "CRCL",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 70493500,
+      "yahoo": "CRCL"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 33907040,
+      "market": "NYSE",
+      "marketCap": 156510912512,
+      "name": "Salesforce, Inc.",
+      "rankMarketCap": 73,
+      "rankWeeklyVolume": 97,
+      "source": "yahoo-most-actives",
+      "symbol": "CRM",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 98835500,
+      "yahoo": "CRM"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 186066206720,
+      "name": "CrowdStrike",
+      "rankMarketCap": 59,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "CRWD",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "CRWD"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 23126036,
+      "market": "NasdaqGS",
+      "marketCap": 59756322816,
+      "name": "CoreWeave, Inc.",
+      "rankMarketCap": 195,
+      "rankWeeklyVolume": 81,
+      "source": "yahoo-most-actives",
+      "symbol": "CRWV",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 117073500,
+      "yahoo": "CRWV"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 42092900,
+      "market": "NasdaqGS",
+      "marketCap": 474627538944,
+      "name": "Cisco Systems, Inc.",
+      "rankMarketCap": 20,
+      "rankWeeklyVolume": 69,
+      "source": "yahoo-most-actives",
+      "symbol": "CSCO",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 133347100,
+      "yahoo": "CSCO"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 13244754,
+      "market": "NasdaqGS",
+      "marketCap": 84099358720,
+      "name": "CSX Corporation",
+      "rankMarketCap": 139,
+      "rankWeeklyVolume": 131,
+      "source": "yahoo-most-actives",
+      "symbol": "CSX",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 75777000,
+      "yahoo": "CSX"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 68527443968,
+      "name": "Cintas",
+      "rankMarketCap": 179,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "CTAS",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "CTAS"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 14302869,
+      "market": "NasdaqGS",
+      "name": "Cognizant Technology Solutions Corporation",
+      "rankWeeklyVolume": 170,
+      "source": "yahoo-most-actives",
+      "symbol": "CTSH",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 52628400,
+      "yahoo": "CTSH"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 16453221,
+      "market": "NYSE",
+      "marketCap": 80069009408,
+      "name": "Carvana Co.",
+      "rankMarketCap": 147,
+      "rankWeeklyVolume": 160,
+      "source": "yahoo-most-actives",
+      "symbol": "CVNA",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 58444900,
+      "yahoo": "CVNA"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 116083867648,
+      "name": "CVS Health",
+      "rankMarketCap": 100,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "CVS",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "CVS"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 363386929152,
+      "name": "Chevron",
+      "rankMarketCap": 28,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "CVX",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "CVX"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 17091850,
+      "market": "NasdaqGS",
+      "name": "Caesars Entertainment, Inc.",
+      "rankWeeklyVolume": 73,
+      "source": "yahoo-most-actives",
+      "symbol": "CZR",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 123163400,
+      "yahoo": "CZR"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 10145226,
+      "market": "NYSE",
+      "marketCap": 58874568704,
+      "name": "Dominion Energy, Inc.",
+      "rankMarketCap": 196,
+      "rankWeeklyVolume": 169,
+      "source": "yahoo-most-actives",
+      "symbol": "D",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 52827600,
+      "yahoo": "D"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 69405630464,
+      "name": "DoorDash",
+      "rankMarketCap": 176,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "DASH",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "DASH"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 88046755840,
+      "name": "Datadog",
+      "rankMarketCap": 130,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "DDOG",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "DDOG"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 146446778368,
+      "name": "Deere & Company (John Deere)",
+      "rankMarketCap": 82,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "DE",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "DE"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 38175314,
+      "market": "NYSE",
+      "marketCap": 273409769472,
+      "name": "Dell Technologies Inc.",
+      "rankMarketCap": 42,
+      "rankWeeklyVolume": 93,
+      "source": "yahoo-most-actives",
+      "symbol": "DELL",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 102204700,
+      "yahoo": "DELL"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 129288462336,
+      "name": "Danaher",
+      "rankMarketCap": 89,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "DHR",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "DHR"
+    },
+    {
+      "currency": "USD",
+      "market": "NYSE Arca",
+      "name": "SPDR Dow Jones Industrial Average ETF",
+      "symbol": "DIA",
+      "tags": [
+        "base"
+      ],
+      "yahoo": "DIA"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 176828973056,
+      "name": "Walt Disney",
+      "rankMarketCap": 67,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "DIS",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "DIS"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 34247485,
+      "market": "NasdaqGS",
+      "name": "DraftKings Inc.",
+      "rankWeeklyVolume": 124,
+      "source": "yahoo-most-actives",
+      "symbol": "DKNG",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 79633500,
+      "yahoo": "DKNG"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 67962822656,
+      "name": "Digital Realty",
+      "rankMarketCap": 182,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "DLR",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "DLR"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 19778377,
+      "market": "NYSE American",
+      "name": "Denison Mines Corp.",
+      "rankWeeklyVolume": 90,
+      "source": "yahoo-most-actives",
+      "symbol": "DNN",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 108618500,
+      "yahoo": "DNN"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 55530077,
+      "market": "NYSE",
+      "name": "Healthpeak Properties, Inc.",
+      "rankWeeklyVolume": 107,
+      "source": "yahoo-most-actives",
+      "symbol": "DOC",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 90305200,
+      "yahoo": "DOC"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 17163788,
+      "market": "NYSE",
+      "name": "Dow Inc.",
+      "rankWeeklyVolume": 149,
+      "source": "yahoo-most-actives",
+      "symbol": "DOW",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 68793800,
+      "yahoo": "DOW"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 95679848448,
+      "name": "Duke Energy",
+      "rankMarketCap": 116,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "DUK",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "DUK"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 11740258,
+      "market": "NYSE",
+      "name": "Devon Energy Corporation",
+      "rankWeeklyVolume": 151,
+      "source": "yahoo-most-actives",
+      "symbol": "DVN",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 67349600,
+      "yahoo": "DVN"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 9257129,
+      "market": "NasdaqGS",
+      "name": "DexCom, Inc.",
+      "rankWeeklyVolume": 192,
+      "source": "yahoo-most-actives",
+      "symbol": "DXCM",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 32779700,
+      "yahoo": "DXCM"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 72048001024,
+      "name": "Ecolab",
+      "rankMarketCap": 167,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "ECL",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "ECL"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 85386076160,
+      "name": "Elevance Health",
+      "rankMarketCap": 135,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "ELV",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "ELV"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 80553582592,
+      "name": "Emerson",
+      "rankMarketCap": 146,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "EMR",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "EMR"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 71041998848,
+      "name": "EOG Resources",
+      "rankMarketCap": 171,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "EOG",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "EOG"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 15841998,
+      "market": "NasdaqCM",
+      "name": "Eos Energy Enterprises, Inc.",
+      "rankWeeklyVolume": 82,
+      "source": "yahoo-most-actives",
+      "symbol": "EOSE",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 117012300,
+      "yahoo": "EOSE"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 79595839488,
+      "name": "Enterprise Products",
+      "rankMarketCap": 150,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "EPD",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "EPD"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 105334644736,
+      "name": "Equinix",
+      "rankMarketCap": 106,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "EQIX",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "EQIX"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 12773783,
+      "market": "NYSE American",
+      "name": "Equinox Gold Corp.",
+      "rankWeeklyVolume": 179,
+      "source": "yahoo-most-actives",
+      "symbol": "EQX",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 49734900,
+      "yahoo": "EQX"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 65967022080,
+      "name": "Energy Transfer LP",
+      "rankMarketCap": 186,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "ET",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "ET"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 149712598,
+      "market": "NYSE",
+      "marketCap": 69493047296,
+      "name": "Ford Motor Company",
+      "rankMarketCap": 175,
+      "rankWeeklyVolume": 5,
+      "source": "yahoo-most-actives",
+      "symbol": "F",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 542085400,
+      "yahoo": "F"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 94462050304,
+      "name": "Freeport-McMoRan",
+      "rankMarketCap": 117,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "FCX",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "FCX"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 98246328320,
+      "name": "FedEx",
+      "rankMarketCap": 115,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "FDX",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "FDX"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 32514646,
+      "market": "NYSE",
+      "name": "Figma, Inc.",
+      "rankWeeklyVolume": 98,
+      "source": "yahoo-most-actives",
+      "symbol": "FIG",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 98288600,
+      "yahoo": "FIG"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 13507418,
+      "market": "NYSE",
+      "name": "Fidelity National Information Services, Inc.",
+      "rankWeeklyVolume": 190,
+      "source": "yahoo-most-actives",
+      "symbol": "FIS",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 35606600,
+      "yahoo": "FIS"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 64323682304,
+      "name": "Comfort Systems USA",
+      "rankMarketCap": 188,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "FIX",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "FIX"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 10744644,
+      "market": "NasdaqGS",
+      "name": "Flex Ltd.",
+      "rankWeeklyVolume": 195,
+      "source": "yahoo-most-actives",
+      "symbol": "FLEX",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 30886000,
+      "yahoo": "FLEX"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 11153510,
+      "market": "NasdaqGS",
+      "name": "Fluence Energy, Inc.",
+      "rankWeeklyVolume": 184,
+      "source": "yahoo-most-actives",
+      "symbol": "FLNC",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 43154400,
+      "yahoo": "FLNC"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 22312019,
+      "market": "NasdaqGM",
+      "name": "Firefly Aerospace Inc.",
+      "rankWeeklyVolume": 136,
+      "source": "yahoo-most-actives",
+      "symbol": "FLY",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 73905700,
+      "yahoo": "FLY"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 32048665,
+      "market": "NYSE",
+      "name": "Forgent Power Solutions, Inc.",
+      "rankWeeklyVolume": 174,
+      "source": "yahoo-most-actives",
+      "symbol": "FPS",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 51140400,
+      "yahoo": "FPS"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 12421277,
+      "market": "NasdaqGS",
+      "name": "Fermi Inc.",
+      "rankWeeklyVolume": 147,
+      "source": "yahoo-most-actives",
+      "symbol": "FRMI",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 70173300,
+      "yahoo": "FRMI"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 13476699,
+      "market": "NasdaqGS",
+      "name": "Freshworks Inc.",
+      "rankWeeklyVolume": 168,
+      "source": "yahoo-most-actives",
+      "symbol": "FRSH",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 52952900,
+      "yahoo": "FRSH"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 101083496448,
+      "name": "Fortinet",
+      "rankMarketCap": 112,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "FTNT",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "FTNT"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 32040853,
+      "market": "NYSE",
+      "name": "The Gap, Inc.",
+      "rankWeeklyVolume": 127,
+      "source": "yahoo-most-actives",
+      "symbol": "GAP",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 77271600,
+      "yahoo": "GAP"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 93790593024,
+      "name": "General Dynamics",
+      "rankMarketCap": 119,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "GD",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "GD"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 338274058240,
+      "name": "General Electric",
+      "rankMarketCap": 33,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "GE",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "GE"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 260206952448,
+      "name": "GE Vernova",
+      "rankMarketCap": 44,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "GEV",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "GEV"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 23576335,
+      "market": "NYSE",
+      "name": "Gerdau S.A.",
+      "rankWeeklyVolume": 105,
+      "source": "yahoo-most-actives",
+      "symbol": "GGB",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 93244200,
+      "yahoo": "GGB"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 16639906,
+      "market": "NasdaqGS",
+      "marketCap": 166904233984,
+      "name": "Gilead Sciences, Inc.",
+      "rankMarketCap": 70,
+      "rankWeeklyVolume": 187,
+      "source": "yahoo-most-actives",
+      "symbol": "GILD",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 40534100,
+      "yahoo": "GILD"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 10151420,
+      "market": "NYSE",
+      "marketCap": 155913158656,
+      "name": "Corning Incorporated",
+      "rankMarketCap": 75,
+      "rankWeeklyVolume": 163,
+      "source": "yahoo-most-actives",
+      "symbol": "GLW",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 56423500,
+      "yahoo": "GLW"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 75054612480,
+      "name": "General Motors",
+      "rankMarketCap": 158,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "GM",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "GM"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 45447584,
+      "market": "NasdaqGS",
+      "marketCap": 4560616161280,
+      "name": "Alphabet Inc.",
+      "rankMarketCap": 3,
+      "rankWeeklyVolume": 85,
+      "source": "yahoo-most-actives",
+      "symbol": "GOOG",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 115180900,
+      "yahoo": "GOOG"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 44249622,
+      "market": "NasdaqGS",
+      "name": "Alphabet Inc.",
+      "rankWeeklyVolume": 64,
+      "source": "yahoo-most-actives",
+      "symbol": "GOOGL",
+      "tags": [
+        "base",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 139989300,
+      "yahoo": "GOOGL"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 51379307,
+      "market": "NasdaqGS",
+      "name": "Grab Holdings Limited",
+      "rankWeeklyVolume": 27,
+      "source": "yahoo-most-actives",
+      "symbol": "GRAB",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 213068100,
+      "yahoo": "GRAB"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 302547828736,
+      "name": "Goldman Sachs",
+      "rankMarketCap": 37,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "GS",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "GS"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 58272321536,
+      "name": "W. W. Grainger",
+      "rankMarketCap": 200,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "GWW",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "GWW"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 24655070,
+      "market": "NasdaqGS",
+      "name": "Huntington Bancshares Incorporated",
+      "rankWeeklyVolume": 71,
+      "source": "yahoo-most-actives",
+      "symbol": "HBAN",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 129420700,
+      "yahoo": "HBAN"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 83975241728,
+      "name": "HCA Healthcare",
+      "rankMarketCap": 140,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "HCA",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "HCA"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 316225585152,
+      "name": "Home Depot",
+      "rankMarketCap": 36,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "HD",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "HD"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 20620217,
+      "market": "NYSE",
+      "name": "Hims & Hers Health, Inc.",
+      "rankWeeklyVolume": 109,
+      "source": "yahoo-most-actives",
+      "symbol": "HIMS",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 87665900,
+      "yahoo": "HIMS"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 17308151,
+      "market": "NYSE",
+      "name": "Hecla Mining Company",
+      "rankWeeklyVolume": 150,
+      "source": "yahoo-most-actives",
+      "symbol": "HL",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 68687300,
+      "yahoo": "HL"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 74591264768,
+      "name": "Hilton Worldwide",
+      "rankMarketCap": 161,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "HLT",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "HLT"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 150720724992,
+      "name": "Honeywell",
+      "rankMarketCap": 77,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "HON",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "HON"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 63619530,
+      "market": "NasdaqGS",
+      "marketCap": 84917633024,
+      "name": "Robinhood Markets, Inc.",
+      "rankMarketCap": 137,
+      "rankWeeklyVolume": 41,
+      "source": "yahoo-most-actives",
+      "symbol": "HOOD",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 174640500,
+      "yahoo": "HOOD"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 85219777,
+      "market": "NYSE",
+      "name": "Hewlett Packard Enterprise Company",
+      "rankWeeklyVolume": 42,
+      "source": "yahoo-most-actives",
+      "symbol": "HPE",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 174276700,
+      "yahoo": "HPE"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 43451650,
+      "market": "NYSE",
+      "name": "HP Inc.",
+      "rankWeeklyVolume": 26,
+      "source": "yahoo-most-actives",
+      "symbol": "HPQ",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 213600300,
+      "yahoo": "HPQ"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 103327760384,
+      "name": "Howmet Aerospace",
+      "rankMarketCap": 111,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "HWM",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "HWM"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 147854065664,
+      "name": "Interactive Brokers",
+      "rankMarketCap": 81,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "IBKR",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "IBKR"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 28387392,
+      "market": "NYSE",
+      "marketCap": 279897833472,
+      "name": "International Business Machines Corporation",
+      "rankMarketCap": 39,
+      "rankWeeklyVolume": 125,
+      "source": "yahoo-most-actives",
+      "symbol": "IBM",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 78473900,
+      "yahoo": "IBM"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 14789386,
+      "market": "NasdaqGS",
+      "name": "ImmunityBio, Inc.",
+      "rankWeeklyVolume": 123,
+      "source": "yahoo-most-actives",
+      "symbol": "IBRX",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 79710500,
+      "yahoo": "IBRX"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 83611025408,
+      "name": "Intercontinental Exchange",
+      "rankMarketCap": 141,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "ICE",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "ICE"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 29270519,
+      "market": "NYSE",
+      "name": "Infleqtion, Inc.",
+      "rankWeeklyVolume": 35,
+      "source": "yahoo-most-actives",
+      "symbol": "INFQ",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 192051800,
+      "yahoo": "INFQ"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 23611882,
+      "market": "NYSE",
+      "name": "Infosys Limited",
+      "rankWeeklyVolume": 80,
+      "source": "yahoo-most-actives",
+      "symbol": "INFY",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 117530600,
+      "yahoo": "INFY"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 153853296,
+      "market": "NasdaqGS",
+      "marketCap": 576381648896,
+      "name": "Intel Corporation",
+      "rankMarketCap": 18,
+      "rankWeeklyVolume": 4,
+      "source": "yahoo-most-actives",
+      "symbol": "INTC",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 572626600,
+      "yahoo": "INTC"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 15388429,
+      "market": "NasdaqGS",
+      "name": "Inter & Co, Inc.",
+      "rankWeeklyVolume": 173,
+      "source": "yahoo-most-actives",
+      "symbol": "INTR",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 51197200,
+      "yahoo": "INTR"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 90685718528,
+      "name": "Intuit",
+      "rankMarketCap": 122,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "INTU",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "INTU"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 28008913,
+      "market": "NYSE",
+      "name": "IonQ, Inc.",
+      "rankWeeklyVolume": 43,
+      "source": "yahoo-most-actives",
+      "symbol": "IONQ",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 172628000,
+      "yahoo": "IONQ"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 48265582,
+      "market": "NasdaqGS",
+      "name": "IREN Limited",
+      "rankWeeklyVolume": 19,
+      "source": "yahoo-most-actives",
+      "symbol": "IREN",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 260843600,
+      "yahoo": "IREN"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 150391717888,
+      "name": "Intuitive Surgical",
+      "rankMarketCap": 78,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "ISRG",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "ISRG"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 22119232,
+      "market": "NYSE",
+      "name": "Ita\u00fa Unibanco Holding S.A.",
+      "rankWeeklyVolume": 115,
+      "source": "yahoo-most-actives",
+      "symbol": "ITUB",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 83761200,
+      "yahoo": "ITUB"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 71142457344,
+      "name": "Illinois Tool Works",
+      "rankMarketCap": 170,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "ITW",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "ITW"
+    },
+    {
+      "currency": "USD",
+      "market": "NYSE Arca",
+      "name": "iShares Core S&P 500 ETF",
+      "symbol": "IVV",
+      "tags": [
+        "base"
+      ],
+      "yahoo": "IVV"
+    },
+    {
+      "currency": "USD",
+      "market": "NYSE Arca",
+      "name": "iShares Russell 2000 ETF",
+      "symbol": "IWM",
+      "tags": [
+        "base"
+      ],
+      "yahoo": "IWM"
+    },
+    {
+      "currency": "USD",
+      "market": "NYSE Arca",
+      "name": "JPMorgan Equity Premium Income ETF",
+      "symbol": "JEPI",
+      "tags": [
+        "base"
+      ],
+      "yahoo": "JEPI"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 542418173952,
+      "name": "Johnson & Johnson",
+      "rankMarketCap": 19,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "JNJ",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "JNJ"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 28720916,
+      "market": "NYSE",
+      "name": "Joby Aviation, Inc.",
+      "rankWeeklyVolume": 37,
+      "source": "yahoo-most-actives",
+      "symbol": "JOBY",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 183834900,
+      "yahoo": "JOBY"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 802004533248,
+      "name": "JPMorgan Chase",
+      "rankMarketCap": 14,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "JPM",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "JPM"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 40538952,
+      "market": "NasdaqGM",
+      "name": "Keel Infrastructure Corp.",
+      "rankWeeklyVolume": 24,
+      "source": "yahoo-most-actives",
+      "symbol": "KEEL",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 215853100,
+      "yahoo": "KEEL"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 19172264,
+      "market": "NYSE",
+      "name": "KeyCorp",
+      "rankWeeklyVolume": 159,
+      "source": "yahoo-most-actives",
+      "symbol": "KEY",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 58728100,
+      "yahoo": "KEY"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 18795342,
+      "market": "NasdaqGS",
+      "name": "The Kraft Heinz Company",
+      "rankWeeklyVolume": 143,
+      "source": "yahoo-most-actives",
+      "symbol": "KHC",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 71327900,
+      "yahoo": "KHC"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 89458442240,
+      "name": "KKR & Co.",
+      "rankMarketCap": 123,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "KKR",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "KKR"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 251028209664,
+      "name": "KLA",
+      "rankMarketCap": 45,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "KLAC",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "KLAC"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 69147590656,
+      "name": "Kinder Morgan",
+      "rankMarketCap": 177,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "KMI",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "KMI"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 32408986,
+      "market": "NYSE",
+      "marketCap": 339939131392,
+      "name": "The Coca-Cola Company",
+      "rankMarketCap": 32,
+      "rankWeeklyVolume": 119,
+      "source": "yahoo-most-actives",
+      "symbol": "KO",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 81609300,
+      "yahoo": "KO"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 14105033,
+      "market": "NYSE",
+      "name": "Karman Holdings Inc.",
+      "rankWeeklyVolume": 200,
+      "source": "yahoo-most-actives",
+      "symbol": "KRMN",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 22493400,
+      "yahoo": "KRMN"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 33737997,
+      "market": "NYSE",
+      "name": "Kenvue Inc.",
+      "rankWeeklyVolume": 96,
+      "source": "yahoo-most-actives",
+      "symbol": "KVUE",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 99120300,
+      "yahoo": "KVUE"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 14952652,
+      "market": "NasdaqGS",
+      "name": "Lucid Group, Inc.",
+      "rankWeeklyVolume": 148,
+      "source": "yahoo-most-actives",
+      "symbol": "LCID",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 69506500,
+      "yahoo": "LCID"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 58716438528,
+      "name": "L3Harris Technologies",
+      "rankMarketCap": 198,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "LHX",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "LHX"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 66515890176,
+      "name": "Lumentum",
+      "rankMarketCap": 185,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "LITE",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "LITE"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 985374195712,
+      "name": "Eli Lilly",
+      "rankMarketCap": 11,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "LLY",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "LLY"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 122302472192,
+      "name": "Lockheed Martin",
+      "rankMarketCap": 92,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "LMT",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "LMT"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 120255963136,
+      "name": "Lowe's Companies",
+      "rankMarketCap": 94,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "LOW",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "LOW"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 397906673664,
+      "name": "Lam Research",
+      "rankMarketCap": 24,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "LRCX",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "LRCX"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 12141080,
+      "market": "NYSE",
+      "name": "Lumen Technologies, Inc.",
+      "rankWeeklyVolume": 129,
+      "source": "yahoo-most-actives",
+      "symbol": "LUMN",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 76246700,
+      "yahoo": "LUMN"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 19624962,
+      "market": "NasdaqGM",
+      "name": "Intuitive Machines, Inc.",
+      "rankWeeklyVolume": 62,
+      "source": "yahoo-most-actives",
+      "symbol": "LUNR",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 140741000,
+      "yahoo": "LUNR"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 14306967,
+      "market": "NasdaqGS",
+      "name": "Lyft, Inc.",
+      "rankWeeklyVolume": 153,
+      "source": "yahoo-most-actives",
+      "symbol": "LYFT",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 64177400,
+      "yahoo": "LYFT"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 13992686,
+      "market": "NYSE",
+      "name": "Lloyds Banking Group plc",
+      "rankWeeklyVolume": 128,
+      "source": "yahoo-most-actives",
+      "symbol": "LYG",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 76610100,
+      "yahoo": "LYG"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 436472774656,
+      "name": "Mastercard",
+      "rankMarketCap": 21,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "MA",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "MA"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 99041452032,
+      "name": "Marriott International",
+      "rankMarketCap": 113,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "MAR",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "MAR"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 47631875,
+      "market": "NasdaqCM",
+      "name": "MARA Holdings, Inc.",
+      "rankWeeklyVolume": 33,
+      "source": "yahoo-most-actives",
+      "symbol": "MARA",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 201861700,
+      "yahoo": "MARA"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 198373244928,
+      "name": "McDonald",
+      "rankMarketCap": 57,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "MCD",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "MCD"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 11360578,
+      "market": "NasdaqGS",
+      "name": "Microchip Technology Incorporated",
+      "rankWeeklyVolume": 165,
+      "source": "yahoo-most-actives",
+      "symbol": "MCHP",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 53742700,
+      "yahoo": "MCHP"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 89244295168,
+      "name": "McKesson",
+      "rankMarketCap": 124,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "MCK",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "MCK"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 79172091904,
+      "name": "Moody's",
+      "rankMarketCap": 151,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "MCO",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "MCO"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 10583999,
+      "market": "NasdaqGM",
+      "name": "MongoDB, Inc.",
+      "rankWeeklyVolume": 197,
+      "source": "yahoo-most-actives",
+      "symbol": "MDB",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 27864700,
+      "yahoo": "MDB"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 25308969,
+      "market": "NasdaqGS",
+      "name": "Medline Inc.",
+      "rankWeeklyVolume": 84,
+      "source": "yahoo-most-actives",
+      "symbol": "MDLN",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 115320800,
+      "yahoo": "MDLN"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 78520852480,
+      "name": "Mondelez International",
+      "rankMarketCap": 153,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "MDLZ",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "MDLZ"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 22214455,
+      "market": "NYSE",
+      "name": "Medtronic plc",
+      "rankWeeklyVolume": 157,
+      "source": "yahoo-most-actives",
+      "symbol": "MDT",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 59560100,
+      "yahoo": "MDT"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 19726619,
+      "market": "NasdaqGS",
+      "marketCap": 1605578129408,
+      "name": "Meta Platforms, Inc.",
+      "rankMarketCap": 8,
+      "rankWeeklyVolume": 116,
+      "source": "yahoo-most-actives",
+      "symbol": "META",
+      "tags": [
+        "base",
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 83611900,
+      "yahoo": "META"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 79867600896,
+      "name": "3M",
+      "rankMarketCap": 149,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "MMM",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "MMM"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 86142959616,
+      "name": "Monster Beverage",
+      "rankMarketCap": 133,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "MNST",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "MNST"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 116191035392,
+      "name": "Altria Group",
+      "rankMarketCap": 99,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "MO",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "MO"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 72625078272,
+      "name": "Marathon Petroleum",
+      "rankMarketCap": 165,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "MPC",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "MPC"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 76947898368,
+      "name": "Monolithic Power Systems",
+      "rankMarketCap": 156,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "MPWR",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "MPWR"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 293217566720,
+      "name": "Merck",
+      "rankMarketCap": 38,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "MRK",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "MRK"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 77072662528,
+      "name": "Marsh & McLennan Companies",
+      "rankMarketCap": 155,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "MRSH",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "MRSH"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 30115396,
+      "market": "NasdaqGS",
+      "marketCap": 179488391168,
+      "name": "Marvell Technology, Inc.",
+      "rankMarketCap": 66,
+      "rankWeeklyVolume": 31,
+      "source": "yahoo-most-actives",
+      "symbol": "MRVL",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 203155500,
+      "yahoo": "MRVL"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 328075247616,
+      "name": "Morgan Stanley",
+      "rankMarketCap": 35,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "MS",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "MS"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 77168677,
+      "market": "NasdaqGS",
+      "marketCap": 3344578379776,
+      "name": "Microsoft Corporation",
+      "rankMarketCap": 4,
+      "rankWeeklyVolume": 29,
+      "source": "yahoo-most-actives",
+      "symbol": "MSFT",
+      "tags": [
+        "base",
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 208462900,
+      "yahoo": "MSFT"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 66942697472,
+      "name": "Motorola Solutions",
+      "rankMarketCap": 184,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "MSI",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "MSI"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 19137065,
+      "market": "NasdaqGS",
+      "name": "Strategy Inc",
+      "rankWeeklyVolume": 140,
+      "source": "yahoo-most-actives",
+      "symbol": "MSTR",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 71950300,
+      "yahoo": "MSTR"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 60134240,
+      "market": "NasdaqGS",
+      "marketCap": 1095029751808,
+      "name": "Micron Technology, Inc.",
+      "rankMarketCap": 9,
+      "rankWeeklyVolume": 14,
+      "source": "yahoo-most-actives",
+      "symbol": "MU",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 294849400,
+      "yahoo": "MU"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 21204312,
+      "market": "NasdaqGS",
+      "name": "Nebius Group N.V.",
+      "rankWeeklyVolume": 111,
+      "source": "yahoo-most-actives",
+      "symbol": "NBIS",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 85585900,
+      "yahoo": "NBIS"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 19067866,
+      "market": "NYSE",
+      "name": "Norwegian Cruise Line Holdings Ltd.",
+      "rankWeeklyVolume": 79,
+      "source": "yahoo-most-actives",
+      "symbol": "NCLH",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 118242800,
+      "yahoo": "NCLH"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 25325562,
+      "market": "NYSE",
+      "marketCap": 181468528640,
+      "name": "NextEra Energy, Inc.",
+      "rankMarketCap": 65,
+      "rankWeeklyVolume": 142,
+      "source": "yahoo-most-actives",
+      "symbol": "NEE",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 71686300,
+      "yahoo": "NEE"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 117227970560,
+      "name": "Newmont",
+      "rankMarketCap": 95,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "NEM",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "NEM"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 85475205120,
+      "name": "Cloudflare",
+      "rankMarketCap": 134,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "NET",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "NET"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 35649267,
+      "market": "NasdaqGS",
+      "marketCap": 362212884480,
+      "name": "Netflix, Inc.",
+      "rankMarketCap": 29,
+      "rankWeeklyVolume": 59,
+      "source": "yahoo-most-actives",
+      "symbol": "NFLX",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 148966400,
+      "yahoo": "NFLX"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 41457902,
+      "market": "NYSE",
+      "name": "NIO Inc.",
+      "rankWeeklyVolume": 13,
+      "source": "yahoo-most-actives",
+      "symbol": "NIO",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 303183000,
+      "yahoo": "NIO"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 38865976,
+      "market": "NYSE",
+      "marketCap": 68461408256,
+      "name": "NIKE, Inc.",
+      "rankMarketCap": 181,
+      "rankWeeklyVolume": 78,
+      "source": "yahoo-most-actives",
+      "symbol": "NKE",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 119595000,
+      "yahoo": "NKE"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 13322187,
+      "market": "NYSE",
+      "name": "Annaly Capital Management, Inc.",
+      "rankWeeklyVolume": 167,
+      "source": "yahoo-most-actives",
+      "symbol": "NLY",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 53200600,
+      "yahoo": "NLY"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 80061423616,
+      "name": "Northrop Grumman",
+      "rankMarketCap": 148,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "NOC",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "NOC"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 112356743,
+      "market": "NYSE",
+      "name": "Nokia Oyj",
+      "rankWeeklyVolume": 2,
+      "source": "yahoo-most-actives",
+      "symbol": "NOK",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 672819900,
+      "yahoo": "NOK"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 67031644,
+      "market": "NYSE",
+      "marketCap": 128263782400,
+      "name": "ServiceNow, Inc.",
+      "rankMarketCap": 90,
+      "rankWeeklyVolume": 38,
+      "source": "yahoo-most-actives",
+      "symbol": "NOW",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 182522900,
+      "yahoo": "NOW"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 68492185600,
+      "name": "Norfolk Southern",
+      "rankMarketCap": 180,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "NSC",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "NSC"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 15902415,
+      "market": "NasdaqGS",
+      "name": "NetApp, Inc.",
+      "rankWeeklyVolume": 186,
+      "source": "yahoo-most-actives",
+      "symbol": "NTAP",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 40699100,
+      "yahoo": "NTAP"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 33840021,
+      "market": "NYSE",
+      "name": "Nu Holdings Ltd.",
+      "rankWeeklyVolume": 18,
+      "source": "yahoo-most-actives",
+      "symbol": "NU",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 266639100,
+      "yahoo": "NU"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 230465710,
+      "market": "NasdaqGS",
+      "marketCap": 5114022068224,
+      "name": "NVIDIA Corporation",
+      "rankMarketCap": 1,
+      "rankWeeklyVolume": 1,
+      "source": "yahoo-most-actives",
+      "symbol": "NVDA",
+      "tags": [
+        "base",
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 956367000,
+      "yahoo": "NVDA"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 10939324,
+      "market": "NYSE",
+      "name": "Novo Nordisk A/S",
+      "rankWeeklyVolume": 162,
+      "source": "yahoo-most-actives",
+      "symbol": "NVO",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 57083000,
+      "yahoo": "NVO"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 22328270,
+      "market": "NasdaqGM",
+      "name": "Navitas Semiconductor Corporation",
+      "rankWeeklyVolume": 39,
+      "source": "yahoo-most-actives",
+      "symbol": "NVTS",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 181724100,
+      "yahoo": "NVTS"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 27561603,
+      "market": "NYSE",
+      "name": "Oklo Inc.",
+      "rankWeeklyVolume": 122,
+      "source": "yahoo-most-actives",
+      "symbol": "OKLO",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 80208900,
+      "yahoo": "OKLO"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 17181770,
+      "market": "NasdaqGS",
+      "name": "Okta, Inc.",
+      "rankWeeklyVolume": 189,
+      "source": "yahoo-most-actives",
+      "symbol": "OKTA",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 37463500,
+      "yahoo": "OKTA"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 140097759,
+      "market": "NasdaqCM",
+      "name": "Ondas Inc.",
+      "rankWeeklyVolume": 3,
+      "source": "yahoo-most-actives",
+      "symbol": "ONDS",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 625954400,
+      "yahoo": "ONDS"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 33552427,
+      "market": "NasdaqGS",
+      "name": "Opendoor Technologies Inc.",
+      "rankWeeklyVolume": 23,
+      "source": "yahoo-most-actives",
+      "symbol": "OPEN",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 219851700,
+      "yahoo": "OPEN"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 40817031,
+      "market": "NYSE",
+      "marketCap": 649353691136,
+      "name": "Oracle Corporation",
+      "rankMarketCap": 15,
+      "rankWeeklyVolume": 94,
+      "source": "yahoo-most-actives",
+      "symbol": "ORCL",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 102163100,
+      "yahoo": "ORCL"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 71998767104,
+      "name": "O'Reilly Automotive",
+      "rankMarketCap": 168,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "ORLY",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "ORLY"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 20338831,
+      "market": "NYSE",
+      "name": "Blue Owl Capital Inc.",
+      "rankWeeklyVolume": 108,
+      "source": "yahoo-most-actives",
+      "symbol": "OWL",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 88608500,
+      "yahoo": "OWL"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 14498931,
+      "market": "NasdaqGS",
+      "marketCap": 228450598912,
+      "name": "Palo Alto Networks, Inc.",
+      "rankMarketCap": 49,
+      "rankWeeklyVolume": 185,
+      "source": "yahoo-most-actives",
+      "symbol": "PANW",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 42759000,
+      "yahoo": "PANW"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 64609308,
+      "market": "NYSE",
+      "name": "UiPath, Inc.",
+      "rankWeeklyVolume": 17,
+      "source": "yahoo-most-actives",
+      "symbol": "PATH",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 282121100,
+      "yahoo": "PATH"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 15014221,
+      "market": "NYSE",
+      "name": "Petr\u00f3leo Brasileiro S.A. - Petrobras",
+      "rankWeeklyVolume": 134,
+      "source": "yahoo-most-actives",
+      "symbol": "PBR",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 74205300,
+      "yahoo": "PBR"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 12336017,
+      "market": "NYSE",
+      "name": "PG&E Corporation",
+      "rankWeeklyVolume": 121,
+      "source": "yahoo-most-actives",
+      "symbol": "PCG",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 80686400,
+      "yahoo": "PCG"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 28959766,
+      "market": "NasdaqGS",
+      "name": "PDD Holdings Inc.",
+      "rankWeeklyVolume": 72,
+      "source": "yahoo-most-actives",
+      "symbol": "PDD",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 125006200,
+      "yahoo": "PDD"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 197099208704,
+      "name": "Pepsico",
+      "rankMarketCap": 58,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "PEP",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "PEP"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 21033074,
+      "market": "NYSE",
+      "marketCap": 149211447296,
+      "name": "Pfizer Inc.",
+      "rankMarketCap": 79,
+      "rankWeeklyVolume": 46,
+      "source": "yahoo-most-actives",
+      "symbol": "PFE",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 164346300,
+      "yahoo": "PFE"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 334293663744,
+      "name": "Procter & Gamble",
+      "rankMarketCap": 34,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "PG",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "PG"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 111098404864,
+      "name": "Progressive",
+      "rankMarketCap": 103,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "PGR",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "PGR"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 106496352256,
+      "name": "Parker-Hannifin",
+      "rankMarketCap": 105,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "PH",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "PH"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 21280986,
+      "market": "NYSE",
+      "name": "Pinterest, Inc.",
+      "rankWeeklyVolume": 75,
+      "source": "yahoo-most-actives",
+      "symbol": "PINS",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 120531300,
+      "yahoo": "PINS"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 18720917,
+      "market": "NYSE",
+      "name": "Planet Labs PBC",
+      "rankWeeklyVolume": 144,
+      "source": "yahoo-most-actives",
+      "symbol": "PL",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 71266600,
+      "yahoo": "PL"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 133762531328,
+      "name": "Prologis",
+      "rankMarketCap": 87,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "PLD",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "PLD"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 91550284,
+      "market": "NasdaqGS",
+      "marketCap": 375275192320,
+      "name": "Palantir Technologies Inc.",
+      "rankMarketCap": 26,
+      "rankWeeklyVolume": 22,
+      "source": "yahoo-most-actives",
+      "symbol": "PLTR",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 237571500,
+      "yahoo": "PLTR"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 65781247,
+      "market": "NasdaqCM",
+      "name": "Plug Power Inc.",
+      "rankWeeklyVolume": 7,
+      "source": "yahoo-most-actives",
+      "symbol": "PLUG",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 453781800,
+      "yahoo": "PLUG"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 276457160704,
+      "name": "Philip Morris International",
+      "rankMarketCap": 41,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "PM",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "PM"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 88793972736,
+      "name": "PNC Financial Services",
+      "rankMarketCap": 127,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "PNC",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "PNC"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 30613214,
+      "market": "NasdaqCM",
+      "name": "POET Technologies Inc.",
+      "rankWeeklyVolume": 55,
+      "source": "yahoo-most-actives",
+      "symbol": "POET",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 155426300,
+      "yahoo": "POET"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 70516449280,
+      "name": "Phillips 66",
+      "rankMarketCap": 173,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "PSX",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "PSX"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 17863493,
+      "market": "NasdaqGS",
+      "name": "Peloton Interactive, Inc.",
+      "rankWeeklyVolume": 44,
+      "source": "yahoo-most-actives",
+      "symbol": "PTON",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 171176800,
+      "yahoo": "PTON"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 106802307072,
+      "name": "Quanta Services",
+      "rankMarketCap": 104,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "PWR",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "PWR"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 15091739,
+      "market": "NasdaqGS",
+      "name": "PayPal Holdings, Inc.",
+      "rankWeeklyVolume": 135,
+      "source": "yahoo-most-actives",
+      "symbol": "PYPL",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 73989000,
+      "yahoo": "PYPL"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 35994539,
+      "market": "NYSE",
+      "name": "D-Wave Quantum Inc.",
+      "rankWeeklyVolume": 12,
+      "source": "yahoo-most-actives",
+      "symbol": "QBTS",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 321131700,
+      "yahoo": "QBTS"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 28744014,
+      "market": "NasdaqGS",
+      "marketCap": 264575090688,
+      "name": "QUALCOMM Incorporated",
+      "rankMarketCap": 43,
+      "rankWeeklyVolume": 65,
+      "source": "yahoo-most-actives",
+      "symbol": "QCOM",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 136601300,
+      "yahoo": "QCOM"
+    },
+    {
+      "currency": "USD",
+      "market": "NASDAQ",
+      "name": "Invesco QQQ Trust",
+      "symbol": "QQQ",
+      "tags": [
+        "base"
+      ],
+      "yahoo": "QQQ"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 26985343,
+      "market": "NasdaqGS",
+      "name": "QuantumScape Corporation",
+      "rankWeeklyVolume": 66,
+      "source": "yahoo-most-actives",
+      "symbol": "QS",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 135837000,
+      "yahoo": "QS"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 21304320,
+      "market": "NasdaqCM",
+      "name": "Quantum Computing Inc.",
+      "rankWeeklyVolume": 40,
+      "source": "yahoo-most-actives",
+      "symbol": "QUBT",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 174712300,
+      "yahoo": "QUBT"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 17697511,
+      "market": "NYSE",
+      "name": "QXO, Inc.",
+      "rankWeeklyVolume": 139,
+      "source": "yahoo-most-actives",
+      "symbol": "QXO",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 72393100,
+      "yahoo": "QXO"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 10858318,
+      "market": "NYSE",
+      "name": "Roblox Corporation",
+      "rankWeeklyVolume": 175,
+      "source": "yahoo-most-actives",
+      "symbol": "RBLX",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 51070500,
+      "yahoo": "RBLX"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 76336340992,
+      "name": "Royal Caribbean Group",
+      "rankMarketCap": 157,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "RCL",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "RCL"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 64290587,
+      "market": "NYSE",
+      "name": "Redwire Corporation",
+      "rankWeeklyVolume": 8,
+      "source": "yahoo-most-actives",
+      "symbol": "RDW",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 436196000,
+      "yahoo": "RDW"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 64452943872,
+      "name": "Regeneron Pharmaceuticals",
+      "rankMarketCap": 187,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "REGN",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "REGN"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 60918562,
+      "market": "NasdaqCM",
+      "name": "Rigetti Computing, Inc.",
+      "rankWeeklyVolume": 6,
+      "source": "yahoo-most-actives",
+      "symbol": "RGTI",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 496891000,
+      "yahoo": "RGTI"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 21626486,
+      "market": "NYSE",
+      "name": "Transocean Ltd.",
+      "rankWeeklyVolume": 50,
+      "source": "yahoo-most-actives",
+      "symbol": "RIG",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 160876700,
+      "yahoo": "RIG"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 18642710,
+      "market": "NasdaqCM",
+      "name": "Riot Platforms, Inc.",
+      "rankWeeklyVolume": 118,
+      "source": "yahoo-most-actives",
+      "symbol": "RIOT",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 82515700,
+      "yahoo": "RIOT"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 59280803,
+      "market": "NasdaqGS",
+      "name": "Rivian Automotive, Inc.",
+      "rankWeeklyVolume": 54,
+      "source": "yahoo-most-actives",
+      "symbol": "RIVN",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 155748700,
+      "yahoo": "RIVN"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 34764269,
+      "market": "NasdaqGS",
+      "marketCap": 83055902720,
+      "name": "Rocket Lab Corporation",
+      "rankMarketCap": 142,
+      "rankWeeklyVolume": 58,
+      "source": "yahoo-most-actives",
+      "symbol": "RKLB",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 150362700,
+      "yahoo": "RKLB"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 25313796,
+      "market": "NYSE",
+      "name": "Rocket Companies, Inc.",
+      "rankWeeklyVolume": 92,
+      "source": "yahoo-most-actives",
+      "symbol": "RKT",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 103710300,
+      "yahoo": "RKT"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 11448062,
+      "market": "NYSE",
+      "name": "Rollins, Inc.",
+      "rankWeeklyVolume": 198,
+      "source": "yahoo-most-actives",
+      "symbol": "ROL",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 26962400,
+      "yahoo": "ROL"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 74951892992,
+      "name": "Ross Stores",
+      "rankMarketCap": 159,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "ROST",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "ROST"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 17986857,
+      "market": "NasdaqGS",
+      "name": "Royalty Pharma plc",
+      "rankWeeklyVolume": 196,
+      "source": "yahoo-most-actives",
+      "symbol": "RPRX",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 29960200,
+      "yahoo": "RPRX"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 61668192256,
+      "name": "Republic Services",
+      "rankMarketCap": 193,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "RSG",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "RSG"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 241945149440,
+      "name": "RTX",
+      "rankMarketCap": 47,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "RTX",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "RTX"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 10399581,
+      "market": "NasdaqGS",
+      "name": "Sunrun Inc.",
+      "rankWeeklyVolume": 188,
+      "source": "yahoo-most-actives",
+      "symbol": "RUN",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 39461700,
+      "yahoo": "RUN"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 30768033,
+      "market": "NYSE",
+      "name": "SentinelOne, Inc.",
+      "rankWeeklyVolume": 114,
+      "source": "yahoo-most-actives",
+      "symbol": "S",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 83912500,
+      "yahoo": "S"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 113012654080,
+      "name": "Starbucks",
+      "rankMarketCap": 102,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "SBUX",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "SBUX"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 159606505472,
+      "name": "Southern Copper",
+      "rankMarketCap": 72,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "SCCO",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "SCCO"
+    },
+    {
+      "currency": "USD",
+      "market": "NYSE Arca",
+      "name": "Schwab US Dividend Equity ETF",
+      "symbol": "SCHD",
+      "tags": [
+        "base"
+      ],
+      "yahoo": "SCHD"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 12506140,
+      "market": "NYSE",
+      "marketCap": 151913480192,
+      "name": "The Charles Schwab Corporation",
+      "rankMarketCap": 76,
+      "rankWeeklyVolume": 133,
+      "source": "yahoo-most-actives",
+      "symbol": "SCHW",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 74496500,
+      "yahoo": "SCHW"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 11269214,
+      "market": "NasdaqGS",
+      "name": "Shopify Inc.",
+      "rankWeeklyVolume": 166,
+      "source": "yahoo-most-actives",
+      "symbol": "SHOP",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 53602000,
+      "yahoo": "SHOP"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 74937761792,
+      "name": "Sherwin-Williams",
+      "rankMarketCap": 160,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "SHW",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "SHW"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 30316264,
+      "market": "NYSE",
+      "marketCap": 81555390464,
+      "name": "SLB N.V.",
+      "rankMarketCap": 144,
+      "rankWeeklyVolume": 112,
+      "source": "yahoo-most-actives",
+      "symbol": "SLB",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 85173200,
+      "yahoo": "SLB"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 92968360,
+      "market": "NasdaqGS",
+      "name": "Super Micro Computer, Inc.",
+      "rankWeeklyVolume": 16,
+      "source": "yahoo-most-actives",
+      "symbol": "SMCI",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 285981500,
+      "yahoo": "SMCI"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 44048698,
+      "market": "NYSE",
+      "name": "NuScale Power Corporation",
+      "rankWeeklyVolume": 45,
+      "source": "yahoo-most-actives",
+      "symbol": "SMR",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 169093800,
+      "yahoo": "SMR"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 32604430,
+      "market": "NYSE",
+      "name": "Snap Inc.",
+      "rankWeeklyVolume": 32,
+      "source": "yahoo-most-actives",
+      "symbol": "SNAP",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 202170300,
+      "yahoo": "SNAP"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 251009171456,
+      "name": "Sandisk",
+      "rankMarketCap": 46,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "SNDK",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "SNDK"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 17102687,
+      "market": "NYSE",
+      "marketCap": 88574377984,
+      "name": "Snowflake Inc.",
+      "rankMarketCap": 129,
+      "rankWeeklyVolume": 102,
+      "source": "yahoo-most-actives",
+      "symbol": "SNOW",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 95517600,
+      "yahoo": "SNOW"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 91071397888,
+      "name": "Synopsys",
+      "rankMarketCap": 120,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "SNPS",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "SNPS"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 103768072192,
+      "name": "Southern Company",
+      "rankMarketCap": 109,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "SO",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "SO"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 150003756,
+      "market": "NasdaqGS",
+      "name": "SoFi Technologies, Inc.",
+      "rankWeeklyVolume": 10,
+      "source": "yahoo-most-actives",
+      "symbol": "SOFI",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 424925800,
+      "yahoo": "SOFI"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 40514596,
+      "market": "NasdaqGM",
+      "name": "SoundHound AI, Inc.",
+      "rankWeeklyVolume": 61,
+      "source": "yahoo-most-actives",
+      "symbol": "SOUN",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 143035500,
+      "yahoo": "SOUN"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 77861625856,
+      "name": "Simon Property Group",
+      "rankMarketCap": 154,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "SPG",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "SPG"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 125503995904,
+      "name": "S&P Global",
+      "rankMarketCap": 91,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "SPGI",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "SPGI"
+    },
+    {
+      "currency": "USD",
+      "market": "NYSE Arca",
+      "name": "SPDR S&P 500 ETF",
+      "symbol": "SPY",
+      "tags": [
+        "base"
+      ],
+      "yahoo": "SPY"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 19716137,
+      "market": "NYSE",
+      "name": "Stellantis N.V.",
+      "rankWeeklyVolume": 95,
+      "source": "yahoo-most-actives",
+      "symbol": "STLA",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 99164200,
+      "yahoo": "STLA"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 116959535104,
+      "name": "Stryker Corporation",
+      "rankMarketCap": 96,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "SYK",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "SYK"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 88214136,
+      "market": "NYSE",
+      "marketCap": 172318801920,
+      "name": "AT&T Inc.",
+      "rankMarketCap": 68,
+      "rankWeeklyVolume": 30,
+      "source": "yahoo-most-actives",
+      "symbol": "T",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 207263000,
+      "yahoo": "T"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 70382346240,
+      "name": "TransDigm Group",
+      "rankMarketCap": 174,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "TDG",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "TDG"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 31986898,
+      "market": "NYSE",
+      "name": "T1 Energy Inc.",
+      "rankWeeklyVolume": 15,
+      "source": "yahoo-most-actives",
+      "symbol": "TE",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 289165500,
+      "yahoo": "TE"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 13829691,
+      "market": "NasdaqGS",
+      "name": "Atlassian Corporation",
+      "rankWeeklyVolume": 193,
+      "source": "yahoo-most-actives",
+      "symbol": "TEAM",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 32524700,
+      "yahoo": "TEAM"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 11482568,
+      "market": "NasdaqGS",
+      "name": "Tempus AI, Inc.",
+      "rankWeeklyVolume": 191,
+      "source": "yahoo-most-actives",
+      "symbol": "TEM",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 34690300,
+      "yahoo": "TEM"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 58595295232,
+      "name": "Teradyne",
+      "rankMarketCap": 199,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "TER",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "TER"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 60063825920,
+      "name": "Truist Financial Corporation",
+      "rankMarketCap": 194,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "TFC",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "TFC"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 171124752384,
+      "name": "TJX Companies",
+      "rankMarketCap": 69,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "TJX",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "TJX"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 183027302400,
+      "name": "Thermo Fisher Scientific",
+      "rankMarketCap": 61,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "TMO",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "TMO"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 202945839104,
+      "name": "T-Mobile US",
+      "rankMarketCap": 53,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "TMUS",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "TMUS"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 14601018,
+      "market": "NYSE",
+      "name": "Toast, Inc.",
+      "rankWeeklyVolume": 161,
+      "source": "yahoo-most-actives",
+      "symbol": "TOST",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 57905800,
+      "yahoo": "TOST"
+    },
+    {
+      "currency": "USD",
+      "market": "NASDAQ",
+      "name": "ProShares UltraPro QQQ",
+      "symbol": "TQQQ",
+      "tags": [
+        "base"
+      ],
+      "yahoo": "TQQQ"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 62068862976,
+      "name": "The Travelers Companies",
+      "rankMarketCap": 191,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "TRV",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "TRV"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 17923933,
+      "market": "NasdaqGS",
+      "name": "Tractor Supply Company",
+      "rankWeeklyVolume": 132,
+      "source": "yahoo-most-actives",
+      "symbol": "TSCO",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 75661400,
+      "yahoo": "TSCO"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 44967971,
+      "market": "NasdaqGS",
+      "marketCap": 1636706942976,
+      "name": "Tesla, Inc.",
+      "rankMarketCap": 7,
+      "rankWeeklyVolume": 25,
+      "source": "yahoo-most-actives",
+      "symbol": "TSLA",
+      "tags": [
+        "base",
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 213914500,
+      "yahoo": "TSLA"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 9650857,
+      "market": "NYSE",
+      "name": "Taiwan Semiconductor Manufacturing Company Limited",
+      "rankWeeklyVolume": 172,
+      "source": "yahoo-most-actives",
+      "symbol": "TSM",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 52048000,
+      "yahoo": "TSM"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 48348986,
+      "market": "NasdaqGM",
+      "name": "The Trade Desk, Inc.",
+      "rankWeeklyVolume": 76,
+      "source": "yahoo-most-actives",
+      "symbol": "TTD",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 120436900,
+      "yahoo": "TTD"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 16774373,
+      "market": "NasdaqGS",
+      "marketCap": 278197174272,
+      "name": "Texas Instruments Incorporated",
+      "rankMarketCap": 40,
+      "rankWeeklyVolume": 182,
+      "source": "yahoo-most-actives",
+      "symbol": "TXN",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 45019200,
+      "yahoo": "TXN"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 25005249,
+      "market": "NYSE",
+      "marketCap": 143306178560,
+      "name": "Uber Technologies, Inc.",
+      "rankMarketCap": 84,
+      "rankWeeklyVolume": 67,
+      "source": "yahoo-most-actives",
+      "symbol": "UBER",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 135470600,
+      "yahoo": "UBER"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 14630533,
+      "market": "NYSE",
+      "name": "United Microelectronics Corporation",
+      "rankWeeklyVolume": 103,
+      "source": "yahoo-most-actives",
+      "symbol": "UMC",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 94930400,
+      "yahoo": "UMC"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 10246752,
+      "market": "NYSE",
+      "marketCap": 345376391168,
+      "name": "UnitedHealth Group Incorporated",
+      "rankMarketCap": 31,
+      "rankWeeklyVolume": 194,
+      "source": "yahoo-most-actives",
+      "symbol": "UNH",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 31229400,
+      "yahoo": "UNH"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 155932852224,
+      "name": "Union Pacific Corporation",
+      "rankMarketCap": 74,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "UNP",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "UNP"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 90687168512,
+      "name": "United Parcel Service",
+      "rankMarketCap": 121,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "UPS",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "UPS"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 62375297024,
+      "name": "United Rentals",
+      "rankMarketCap": 190,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "URI",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "URI"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 14988753,
+      "market": "NasdaqGM",
+      "name": "USA Rare Earth, Inc.",
+      "rankWeeklyVolume": 110,
+      "source": "yahoo-most-actives",
+      "symbol": "USAR",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 86510700,
+      "yahoo": "USAR"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 85143642112,
+      "name": "U.S. Bancorp",
+      "rankMarketCap": 136,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "USB",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "USB"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 620653051904,
+      "name": "Visa",
+      "rankMarketCap": 16,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "V",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "V"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 22944260,
+      "market": "NYSE",
+      "name": "Vale S.A.",
+      "rankWeeklyVolume": 91,
+      "source": "yahoo-most-actives",
+      "symbol": "VALE",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 106056500,
+      "yahoo": "VALE"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 13888283,
+      "market": "NYSE",
+      "name": "Venture Global, Inc.",
+      "rankWeeklyVolume": 154,
+      "source": "yahoo-most-actives",
+      "symbol": "VG",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 63449500,
+      "yahoo": "VG"
+    },
+    {
+      "currency": "USD",
+      "market": "NYSE Arca",
+      "name": "Vanguard Information Technology ETF",
+      "symbol": "VGT",
+      "tags": [
+        "base"
+      ],
+      "yahoo": "VGT"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 72695078912,
+      "name": "Valero Energy",
+      "rankMarketCap": 164,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "VLO",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "VLO"
+    },
+    {
+      "currency": "USD",
+      "market": "NYSE Arca",
+      "name": "Vanguard S&P 500 ETF",
+      "symbol": "VOO",
+      "tags": [
+        "base"
+      ],
+      "yahoo": "VOO"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 20883942,
+      "market": "NasdaqCM",
+      "name": "Verra Mobility Corporation",
+      "rankWeeklyVolume": 68,
+      "source": "yahoo-most-actives",
+      "symbol": "VRRM",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 134508000,
+      "yahoo": "VRRM"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 121266987008,
+      "name": "Vertiv Holdings",
+      "rankMarketCap": 93,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "VRT",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "VRT"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 113588084736,
+      "name": "Vertex Pharmaceuticals",
+      "rankMarketCap": 101,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "VRTX",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "VRTX"
+    },
+    {
+      "currency": "USD",
+      "market": "NYSE Arca",
+      "name": "Vanguard Total Stock Market ETF",
+      "symbol": "VTI",
+      "tags": [
+        "base"
+      ],
+      "yahoo": "VTI"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 13457005,
+      "market": "NasdaqGS",
+      "name": "Viatris Inc.",
+      "rankWeeklyVolume": 176,
+      "source": "yahoo-most-actives",
+      "symbol": "VTRS",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 50954300,
+      "yahoo": "VTRS"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 39340172,
+      "market": "NYSE",
+      "marketCap": 199633469440,
+      "name": "Verizon Communications Inc.",
+      "rankMarketCap": 56,
+      "rankWeeklyVolume": 86,
+      "source": "yahoo-most-actives",
+      "symbol": "VZ",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 113960000,
+      "yahoo": "VZ"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 20223462,
+      "market": "NasdaqGS",
+      "marketCap": 67717763072,
+      "name": "Warner Bros. Discovery, Inc.",
+      "rankMarketCap": 183,
+      "rankWeeklyVolume": 88,
+      "source": "yahoo-most-actives",
+      "symbol": "WBD",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 113167100,
+      "yahoo": "WBD"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 183098605568,
+      "name": "Western Digital",
+      "rankMarketCap": 60,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "WDC",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "WDC"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 144945414144,
+      "name": "Welltower",
+      "rankMarketCap": 83,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "WELL",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "WELL"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 11074132,
+      "market": "NYSE",
+      "marketCap": 237287096320,
+      "name": "Wells Fargo & Company",
+      "rankMarketCap": 48,
+      "rankWeeklyVolume": 117,
+      "source": "yahoo-most-actives",
+      "symbol": "WFC",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 82730900,
+      "yahoo": "WFC"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 21839394,
+      "market": "NYSE",
+      "name": "Wipro Limited",
+      "rankWeeklyVolume": 130,
+      "source": "yahoo-most-actives",
+      "symbol": "WIT",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 76060100,
+      "yahoo": "WIT"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 84917207040,
+      "name": "Waste Management",
+      "rankMarketCap": 138,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "WM",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "WM"
+    },
+    {
+      "currency": "USD",
+      "market": "US",
+      "marketCap": 87309844480,
+      "name": "Williams Companies",
+      "rankMarketCap": 131,
+      "source": "companiesmarketcap-us-top-market-cap",
+      "symbol": "WMB",
+      "tags": [
+        "market_cap_top_200"
+      ],
+      "yahoo": "WMB"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 41258461,
+      "market": "NasdaqGS",
+      "marketCap": 922642153472,
+      "name": "Walmart Inc.",
+      "rankMarketCap": 12,
+      "rankWeeklyVolume": 60,
+      "source": "yahoo-most-actives",
+      "symbol": "WMT",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 144965900,
+      "yahoo": "WMT"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 24976408,
+      "market": "NasdaqCM",
+      "name": "TeraWulf Inc.",
+      "rankWeeklyVolume": 56,
+      "source": "yahoo-most-actives",
+      "symbol": "WULF",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 154564800,
+      "yahoo": "WULF"
+    },
+    {
+      "currency": "USD",
+      "market": "NYSE Arca",
+      "name": "Technology Select Sector SPDR Fund",
+      "symbol": "XLK",
+      "tags": [
+        "base"
+      ],
+      "yahoo": "XLK"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 11148037,
+      "market": "NYSE",
+      "marketCap": 602095026176,
+      "name": "Exxon Mobil Corporation",
+      "rankMarketCap": 17,
+      "rankWeeklyVolume": 113,
+      "source": "yahoo-most-actives",
+      "symbol": "XOM",
+      "tags": [
+        "market_cap_top_200",
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 84205200,
+      "yahoo": "XOM"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 15473756,
+      "market": "NYSE",
+      "name": "Full Truck Alliance Co. Ltd.",
+      "rankWeeklyVolume": 52,
+      "source": "yahoo-most-actives",
+      "symbol": "YMM",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 158414800,
+      "yahoo": "YMM"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 14480919,
+      "market": "NYSE",
+      "name": "Zeta Global Holdings Corp.",
+      "rankWeeklyVolume": 180,
+      "source": "yahoo-most-actives",
+      "symbol": "ZETA",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 48444700,
+      "yahoo": "ZETA"
+    },
+    {
+      "currency": "USD",
+      "dayVolume": 10498294,
+      "market": "NasdaqGS",
+      "name": "Zscaler, Inc.",
+      "rankWeeklyVolume": 137,
+      "source": "yahoo-most-actives",
+      "symbol": "ZS",
+      "tags": [
+        "weekly_volume_top_200"
+      ],
+      "weeklyVolume": 73783500,
+      "yahoo": "ZS"
+    }
+  ],
+  "updatedAt": "2026-05-31T07:42:42Z"
+}

@@ -35,7 +35,17 @@
 - 배당 데이터: `data/QQQ_dividends.csv`
 - 데이터 목록: `data/manifest.json`
 
-현재 기본 검색 목록의 종목과 ETF에 대해 데이터가 포함되어 있습니다.
+현재 데이터에는 기본 ETF/한국 종목에 더해 다음 목록이 포함됩니다.
+
+- 미국 상장사 시가총액 상위 200개
+- Yahoo Finance 거래량 상위 후보를 최근 5거래일 누적 거래량으로 재정렬한 상위 200개
+
+중복을 제거한 현재 계산 가능 종목 수는 `data/stocks.json` 기준 362개입니다.
+
+데이터 출처:
+
+- 시가총액 목록: CompaniesMarketCap 미국 상장사 시가총액 순위
+- 가격, 배당, 거래량 데이터: Yahoo Finance chart API
 
 ## GitHub Pages 배포
 
@@ -75,4 +85,3 @@ uv run --python 3.11 python server.py
 ```text
 http://127.0.0.1:4173/
 ```
-

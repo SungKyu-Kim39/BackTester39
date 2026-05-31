@@ -22,4 +22,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update cached market data"
-          file_pattern: data/*.csv data/manifest.json
+          file_pattern: data/*.csv data/manifest.json data/stocks.json

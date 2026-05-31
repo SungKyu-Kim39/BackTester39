@@ -1,4 +1,4 @@
-const stocks = [
+let stocks = [
   { symbol: "AAPL", yahoo: "AAPL", name: "Apple Inc.", market: "NASDAQ", currency: "USD" },
   { symbol: "MSFT", yahoo: "MSFT", name: "Microsoft Corp.", market: "NASDAQ", currency: "USD" },
   { symbol: "NVDA", yahoo: "NVDA", name: "NVIDIA Corp.", market: "NASDAQ", currency: "USD" },
@@ -22,6 +22,31 @@ const stocks = [
   { symbol: "005930", yahoo: "005930.KS", name: "Samsung Electronics", market: "KRX", currency: "KRW" },
   { symbol: "000660", yahoo: "000660.KS", name: "SK hynix", market: "KRX", currency: "KRW" },
 ];
+
+function mergeStocks(baseStocks, extraStocks) {
+  const merged = new Map();
+  [...baseStocks, ...extraStocks].forEach((stock) => {
+    if (!stock?.symbol || !stock?.yahoo) return;
+    merged.set(stock.symbol.toUpperCase(), {
+      currency: "USD",
+      market: "US",
+      ...stock,
+    });
+  });
+  return [...merged.values()].sort((a, b) => a.symbol.localeCompare(b.symbol));
+}
+
+async function loadStockUniverse() {
+  try {
+    const response = await fetch("data/stocks.json", { cache: "no-store" });
+    if (!response.ok) return;
+    const payload = await response.json();
+    stocks = mergeStocks(stocks, payload.stocks || []);
+    renderSuggestions();
+  } catch {
+    // The bundled defaults are enough when the expanded universe is unavailable.
+  }
+}
 
 const form = document.querySelector("#backtestForm");
 const searchInput = document.querySelector("#tickerSearch");
@@ -650,6 +675,7 @@ window.addEventListener("resize", () => {
 });
 
 selectStock(stocks[0]);
+loadStockUniverse();
 syncModeUi();
 syncInputTypeUi();
 drawChart([
