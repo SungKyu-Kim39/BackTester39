@@ -1,49 +1,78 @@
-# BackTester Dashboard
+# BackTester39
 
-Responsive web dashboard for simple stock and ETF backtesting.
+주식과 ETF의 과거 가격 데이터를 기반으로 투자 시나리오를 계산하는 반응형 웹 대시보드입니다.
 
-## Features
+## 서비스 주소
 
-- Search by company name or ticker
-- One-time or recurring purchase simulation
-- Amount-based or share-based buying
-- Fractional or integer-share purchase mode
-- Dividend cash holding or dividend reinvestment
-- Price and portfolio-value chart with hover details
-- Local Python proxy for Yahoo Finance daily chart data
+[https://sungkyu-kim39.github.io/BackTester39/](https://sungkyu-kim39.github.io/BackTester39/)
 
-## Run Locally
+## 주요 기능
 
-```powershell
-uv run --python 3.11 python server.py
-```
+- 기업명 또는 티커 검색
+- 1회성 매수 / 주기적 매수 시뮬레이션
+- 금액 기준 매수 / 수량 기준 매수
+- 소수점 매수 / 정수 수량 매수 선택
+- 배당 현금 보유 / 배당 재투자 선택
+- 현재 평가액, 총 투자금, 보유 수량, 누적 수익률 계산
+- 종목 가격 변화와 평가액 변화를 차트로 표시
+- 차트 hover 시 종가, 평가액, 투자금, 배당 현금, 누적 배당 표시
+- 최근 매수 및 배당 이벤트 내역 표시
 
-Open:
+## 배당 계산 방식
 
-```text
-http://127.0.0.1:4173/
-```
+배당금은 배당 지급일 기준 보유 수량에서 소수점을 버린 정수 수량에 대해서만 계산합니다.
 
-## GitHub Pages Deploy
+예를 들어 51.66주를 보유 중이면 배당은 51주에 대해서만 받습니다.
 
-This repository is ready for GitHub Pages. The browser reads cached CSV files from
-`data/`, so no paid web server is required.
+- `배당 재투자 OFF`: 배당금을 현금으로 누적 보유합니다.
+- `배당 재투자 ON`: 배당금으로 같은 종목을 추가 매수합니다.
 
-GitHub Actions included:
+## 데이터
 
-- `Deploy GitHub Pages`: publishes the static dashboard on every push to `main`
-- `Update market data`: refreshes `data/*.csv` on weekdays, and can be run manually
+브라우저가 GitHub Pages에서 바로 실행될 수 있도록 가격 데이터와 배당 데이터는 `data/` 폴더의 CSV 파일로 저장됩니다.
 
-In GitHub, open **Settings > Pages** and select **GitHub Actions** as the source.
+- 가격 데이터: `data/QQQ.csv`
+- 배당 데이터: `data/QQQ_dividends.csv`
+- 데이터 목록: `data/manifest.json`
 
-## Updating Data Locally
+현재 기본 검색 목록의 종목과 ETF에 대해 데이터가 포함되어 있습니다.
+
+## GitHub Pages 배포
+
+이 저장소는 GitHub Pages 배포용으로 구성되어 있습니다.
+
+GitHub 저장소에서:
+
+1. `Settings`로 이동
+2. `Pages` 메뉴 선택
+3. `Source`를 `GitHub Actions`로 설정
+4. `Actions` 탭에서 `Deploy GitHub Pages` 워크플로 실행 상태 확인
+
+배포가 완료되면 서비스 주소에서 대시보드를 사용할 수 있습니다.
+
+## 데이터 자동 갱신
+
+`.github/workflows/update-data.yml` 워크플로가 평일마다 Yahoo Finance 데이터를 가져와 `data/*.csv`와 `data/*_dividends.csv`를 갱신합니다.
+
+수동 갱신도 가능합니다.
 
 ```powershell
 uv run --python 3.11 python scripts/update_data.py
 ```
 
-The local Python server is still available for development:
+갱신된 CSV를 커밋하고 push하면 GitHub Pages에 반영됩니다.
+
+## 로컬 실행
+
+정적 파일만 확인할 수도 있지만, 개발 중에는 로컬 서버를 켜는 방식이 편합니다.
 
 ```powershell
 uv run --python 3.11 python server.py
 ```
+
+브라우저에서 아래 주소를 엽니다.
+
+```text
+http://127.0.0.1:4173/
+```
+
