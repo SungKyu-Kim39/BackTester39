@@ -458,6 +458,10 @@ select:focus {
   background: var(--accent);
 }
 
+.return-dot {
+  background: #ffffff;
+}
+
 .chart-wrap {
   position: relative;
   width: 100%;

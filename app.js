@@ -491,6 +491,11 @@ function map(value, min, max, start, end) {
   return start + ((value - min) / (max - min)) * (end - start);
 }
 
+function returnGuideInterval(finalReturn, minReturn, maxReturn) {
+  const maxAbs = Math.max(Math.abs(finalReturn || 0), Math.abs(minReturn || 0), Math.abs(maxReturn || 0));
+  return maxAbs >= 5 ? 5 : 1;
+}
+
 function drawChart(points, hoverIndex = -1) {
   const rect = chart.getBoundingClientRect();
   const dpr = window.devicePixelRatio || 1;
@@ -501,21 +506,37 @@ function drawChart(points, hoverIndex = -1) {
   const height = chart.height / dpr;
   ctx.clearRect(0, 0, width, height);
 
-  const pad = { top: 24, right: 62, bottom: 42, left: 62 };
+  const pad = { top: 24, right: 68, bottom: 42, left: 62 };
   const plotW = width - pad.left - pad.right;
   const plotH = height - pad.top - pad.bottom;
+  const gap = 28;
+  const availableH = plotH - gap;
+  const mainH = Math.floor(availableH * 0.8);
+  const returnH = availableH - mainH;
+  const mainTop = pad.top;
+  const mainBottom = mainTop + mainH;
+  const returnTop = mainBottom + gap;
+  const returnBottom = returnTop + returnH;
   const prices = points.map((point) => point.price);
   const values = points.map((point) => point.value);
+  const returns = points.map((point) => point.returnRate || 0);
   const minPrice = Math.min(...prices);
   const maxPrice = Math.max(...prices);
   const maxValue = Math.max(...values);
+  const latestReturn = returns.at(-1) || 0;
+  const rawMinReturn = Math.min(0, ...returns);
+  const rawMaxReturn = Math.max(0, ...returns);
+  const returnInterval = returnGuideInterval(latestReturn, rawMinReturn, rawMaxReturn);
+  const returnPadding = Math.max(returnInterval * 0.14, (rawMaxReturn - rawMinReturn) * 0.08);
+  const minReturn = Math.floor((rawMinReturn - returnPadding) / returnInterval) * returnInterval;
+  const maxReturn = Math.ceil((rawMaxReturn + returnPadding) / returnInterval) * returnInterval;
 
   ctx.strokeStyle = "rgba(255,255,255,0.07)";
   ctx.lineWidth = 1;
   ctx.font = "12px Inter, system-ui, sans-serif";
   ctx.fillStyle = "#91a0b5";
   for (let i = 0; i <= 4; i += 1) {
-    const y = pad.top + (plotH / 4) * i;
+    const y = mainTop + (mainH / 4) * i;
     ctx.beginPath();
     ctx.moveTo(pad.left, y);
     ctx.lineTo(width - pad.right, y);
@@ -527,11 +548,50 @@ function drawChart(points, hoverIndex = -1) {
   }
 
   const xFor = (index) => pad.left + (index / Math.max(1, points.length - 1)) * plotW;
-  const yPrice = (point) => map(point.price, minPrice, maxPrice, pad.top + plotH, pad.top);
-  const yValue = (point) => map(point.value, 0, maxValue, pad.top + plotH, pad.top);
+  const yPrice = (point) => map(point.price, minPrice, maxPrice, mainBottom, mainTop);
+  const yValue = (point) => map(point.value, 0, maxValue, mainBottom, mainTop);
+  const yReturn = (point) => map(point.returnRate || 0, minReturn, maxReturn, returnBottom, returnTop);
 
   drawLine(points, xFor, yPrice, "#67a7ff", 2);
   drawLine(points, xFor, yValue, "#2ee59d", 2.4);
+
+  ctx.strokeStyle = "rgba(255,255,255,0.12)";
+  ctx.beginPath();
+  ctx.moveTo(pad.left, returnTop - gap / 2);
+  ctx.lineTo(width - pad.right, returnTop - gap / 2);
+  ctx.stroke();
+
+  ctx.fillStyle = "#91a0b5";
+  ctx.fillText("누적 수익률", pad.left, returnTop - 9);
+
+  ctx.strokeStyle = "rgba(255,255,255,0.07)";
+  ctx.beginPath();
+  ctx.moveTo(pad.left, returnTop);
+  ctx.lineTo(width - pad.right, returnTop);
+  ctx.moveTo(pad.left, returnBottom);
+  ctx.lineTo(width - pad.right, returnBottom);
+  ctx.stroke();
+
+  const firstGuide = Math.ceil(minReturn / returnInterval) * returnInterval;
+  for (let value = firstGuide; value <= maxReturn + 0.0001; value += returnInterval) {
+    const y = map(value, minReturn, maxReturn, returnBottom, returnTop);
+    if (Math.abs(value) < 0.0001) {
+      ctx.strokeStyle = "rgba(250, 204, 21, 0.85)";
+      ctx.setLineDash([]);
+    } else {
+      ctx.strokeStyle = "rgba(255, 82, 82, 0.42)";
+      ctx.setLineDash([5, 7]);
+    }
+    ctx.beginPath();
+    ctx.moveTo(pad.left, y);
+    ctx.lineTo(width - pad.right, y);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = Math.abs(value) < 0.0001 ? "#fde68a" : "#ff8a8a";
+    ctx.fillText(percent.format(value), width - pad.right + 10, y + 4);
+  }
+
+  drawLine(points, xFor, yReturn, "#ffffff", 2);
 
   ctx.fillStyle = "#91a0b5";
   const dateSteps = Math.min(5, points.length - 1);
@@ -546,11 +606,12 @@ function drawChart(points, hoverIndex = -1) {
     const x = xFor(hoverIndex);
     ctx.strokeStyle = "rgba(255,255,255,0.22)";
     ctx.beginPath();
-    ctx.moveTo(x, pad.top);
-    ctx.lineTo(x, pad.top + plotH);
+    ctx.moveTo(x, mainTop);
+    ctx.lineTo(x, returnBottom);
     ctx.stroke();
     drawPoint(x, yPrice(point), "#67a7ff");
     drawPoint(x, yValue(point), "#2ee59d");
+    drawPoint(x, yReturn(point), "#ffffff");
   }
 }
 
