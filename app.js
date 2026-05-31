@@ -612,6 +612,25 @@ function validateOptions(options) {
   }
 }
 
+function warnUser(message) {
+  document.body.setAttribute("data-last-alert", message);
+  if (!new URLSearchParams(location.search).has("suppressAlerts")) {
+    window.alert(message);
+  }
+}
+
+function adjustStartDateToListing(rows, options) {
+  const firstTradingDate = rows[0]?.date;
+  if (!firstTradingDate || options.startDate >= firstTradingDate) return false;
+
+  const message = `${selectedStock.symbol}의 첫 거래일은 ${firstTradingDate}입니다. 입력한 최초 매수일이 상장 이전이라 최초 매수일을 ${firstTradingDate}로 자동 변경합니다.`;
+  warnUser(message);
+  document.querySelector("#startDate").value = firstTradingDate;
+  options.startDate = firstTradingDate;
+  setStatus(message);
+  return true;
+}
+
 async function runBacktest() {
   const button = form.querySelector("button[type='submit']");
   try {
@@ -623,13 +642,15 @@ async function runBacktest() {
       fetchHistory(selectedStock, options.startDate),
       fetchDividends(selectedStock),
     ]);
+    const adjustedStartDate = adjustStartDateToListing(rows, options);
     setStatus("데이터 로딩 완료. 매수 시뮬레이션을 계산하는 중입니다.");
     const result = simulate(rows, dividends, options);
     chartPoints = result.series;
     updateMetrics(result);
     updateTrades(result.trades);
     drawChart(chartPoints);
-    setStatus(`${selectedStock.symbol} 기준 ${result.trades.length}건의 매수/배당 이벤트를 계산했습니다.`);
+    const prefix = adjustedStartDate ? "상장일 기준으로 최초 매수일을 보정했습니다. " : "";
+    setStatus(`${prefix}${selectedStock.symbol} 기준 ${result.trades.length}건의 매수/배당 이벤트를 계산했습니다.`);
   } catch (error) {
     setStatus(error.message, true);
   } finally {
