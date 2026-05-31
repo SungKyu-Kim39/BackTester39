@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: backtester39
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python server.py
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
