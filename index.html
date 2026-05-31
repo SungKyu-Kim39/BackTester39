@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BackTester Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace">
+        <aside class="control-panel" aria-label="백테스트 조건">
+          <div class="brand">
+            <div class="brand-mark">BT</div>
+            <div>
+              <h1>BackTester</h1>
+              <p>과거 매수 시뮬레이션</p>
+            </div>
+          </div>
+
+          <form id="backtestForm" autocomplete="off">
+            <div class="field search-field">
+              <label for="tickerSearch">기업명 또는 티커</label>
+              <input id="tickerSearch" type="search" placeholder="예: Apple, AAPL, TSLA" />
+              <div id="suggestions" class="suggestions" role="listbox"></div>
+              <p class="hint">미국 종목은 티커만 입력해도 됩니다. 예: MSFT</p>
+            </div>
+
+            <div class="field">
+              <span class="label-text">매수 방식</span>
+              <div class="segmented" role="radiogroup" aria-label="매수 방식">
+                <label>
+                  <input type="radio" name="buyMode" value="single" checked />
+                  <span>1회성</span>
+                </label>
+                <label>
+                  <input type="radio" name="buyMode" value="recurring" />
+                  <span>주기적</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label for="startDate">최초 매수일</label>
+                <input id="startDate" type="date" value="2020-01-02" />
+              </div>
+              <div class="field recurring-only hidden">
+                <label for="frequency">매수 주기</label>
+                <select id="frequency">
+                  <option value="monthly">매월</option>
+                  <option value="weekly">매주</option>
+                  <option value="quarterly">매분기</option>
+                  <option value="yearly">매년</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <span class="label-text">입력 기준</span>
+              <div class="segmented" role="radiogroup" aria-label="입력 기준">
+                <label>
+                  <input type="radio" name="inputType" value="amount" checked />
+                  <span>금액</span>
+                </label>
+                <label>
+                  <input type="radio" name="inputType" value="shares" />
+                  <span>수량</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="field amount-field">
+                <label for="amount">매수 금액</label>
+                <div class="money-input">
+                  <span id="currencyPrefix">$</span>
+                  <input id="amount" type="number" min="0" step="100" value="1000" />
+                </div>
+              </div>
+              <div class="field shares-field hidden">
+                <label for="shares">매수 수량</label>
+                <input id="shares" type="number" min="0" step="0.001" value="10" />
+              </div>
+              <div class="field amount-field">
+                <span class="label-text">금액 매수 처리</span>
+                <label class="toggle">
+                  <input id="fractional" type="checkbox" checked />
+                  <span></span>
+                  <strong>소수점 매수</strong>
+                </label>
+              </div>
+            </div>
+
+            <button class="primary-action" type="submit">
+              <span>계산하기</span>
+              <b>↗</b>
+            </button>
+          </form>
+
+          <div id="status" class="status" aria-live="polite">
+            종목을 선택하고 조건을 입력하세요.
+          </div>
+        </aside>
+
+        <section class="dashboard" aria-label="백테스트 결과">
+          <div class="topbar">
+            <div>
+              <p class="eyebrow">Simulation Result</p>
+              <h2 id="selectedTitle">Apple Inc. · AAPL</h2>
+            </div>
+            <div class="data-source">Yahoo Finance 일봉 데이터</div>
+          </div>
+
+          <div class="metrics">
+            <article class="metric-card">
+              <span>현재 평가액</span>
+              <strong id="metricValue">$0</strong>
+            </article>
+            <article class="metric-card">
+              <span>총 투자금</span>
+              <strong id="metricInvested">$0</strong>
+            </article>
+            <article class="metric-card">
+              <span>누적 수익률</span>
+              <strong id="metricReturn">0.00%</strong>
+            </article>
+            <article class="metric-card">
+              <span>보유 수량</span>
+              <strong id="metricShares">0</strong>
+            </article>
+          </div>
+
+          <div class="chart-section">
+            <div class="chart-header">
+              <div>
+                <h3>가격 변화와 평가액 변화</h3>
+                <p id="chartSubtitle">최초 매수일부터 최신 거래일까지</p>
+              </div>
+              <div class="legend">
+                <span><i class="price-dot"></i>종가</span>
+                <span><i class="value-dot"></i>평가액</span>
+              </div>
+            </div>
+            <div class="chart-wrap">
+              <canvas id="performanceChart" width="1200" height="620"></canvas>
+              <div id="tooltip" class="tooltip hidden"></div>
+            </div>
+          </div>
+
+          <div class="table-section">
+            <div class="table-header">
+              <h3>최근 체결 내역</h3>
+              <span id="tradeCount">0건</span>
+            </div>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>일자</th>
+                    <th>가격</th>
+                    <th>수량</th>
+                    <th>투자금</th>
+                  </tr>
+                </thead>
+                <tbody id="tradesBody">
+                  <tr>
+                    <td colspan="4">계산 결과가 여기에 표시됩니다.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
