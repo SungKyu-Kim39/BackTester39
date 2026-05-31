@@ -240,6 +240,10 @@ select:focus {
   gap: 12px;
 }
 
+.full-row {
+  grid-column: 1 / -1;
+}
+
 .money-input {
   display: flex;
   align-items: center;
