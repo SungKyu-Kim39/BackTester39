@@ -41,6 +41,11 @@ let selectedStock = stocks[0];
 let chartPoints = [];
 let activeSuggestion = -1;
 
+function historyFileName(stock) {
+  const symbol = stock.yahoo || stock.symbol.replace(".", "-");
+  return symbol.replace(/[^A-Z0-9.-]/gi, "_").toUpperCase();
+}
+
 const corsProxies = [
   (url) => `https://r.jina.ai/${url}`,
   (url) => `https://r.jina.ai/${url.replace("https://", "http://")}`,
@@ -197,17 +202,20 @@ async function fetchHistory(stock, startDate) {
   const d2 = toDateKey(today);
   const yahooSymbol = stock.yahoo || stock.symbol.replace(".", "-");
   const appOrigin = location.protocol === "file:" ? "http://127.0.0.1:4173" : location.origin;
-  const localUrl = `${appOrigin}/api/history?s=${encodeURIComponent(yahooSymbol)}&d1=${d1}&d2=${d2}`;
+  const apiUrl = `${appOrigin}/api/history?s=${encodeURIComponent(yahooSymbol)}&d1=${d1}&d2=${d2}`;
+  const staticUrl = `data/${historyFileName(stock)}.csv`;
   const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(yahooSymbol)}?period1=${Math.floor(start.getTime() / 1000)}&period2=${Math.floor(today.getTime() / 1000)}&interval=1d`;
-  const csv = await fetchText(url, localUrl);
+  const csv = await fetchText(url, { apiUrl, staticUrl, custom: stock.custom });
   const rows = parseCsv(csv);
   if (rows.length < 2) throw new Error("가격 데이터를 찾을 수 없습니다.");
   return rows;
 }
 
-async function fetchText(url, localUrl = null) {
+async function fetchText(url, options = {}) {
+  const { apiUrl = null, staticUrl = null, custom = false } = options;
   const targets = [
-    ...(localUrl ? [{ label: "로컬 서버", url: localUrl }] : []),
+    ...(staticUrl ? [{ label: "저장된 GitHub Pages 데이터", url: staticUrl }] : []),
+    ...(apiUrl ? [{ label: "로컬 API", url: apiUrl }] : []),
     { label: "직접 요청", url },
     ...corsProxies.map((proxy, index) => ({ label: `대체 경로 ${index + 1}`, url: proxy(url) })),
   ];
@@ -229,8 +237,14 @@ async function fetchText(url, localUrl = null) {
     }
   }
 
+  if (custom) {
+    throw new Error(
+      "GitHub Pages 배포판에서는 저장된 종목만 계산할 수 있습니다. 새 티커는 data 폴더에 CSV를 추가하거나 로컬 서버에서 실행하세요.",
+    );
+  }
+
   throw new Error(
-    `가격 데이터를 가져오지 못했습니다. 브라우저 CORS 또는 네트워크 제한일 수 있습니다. (${errors.slice(-3).join(", ") || "원인 불명"})`,
+    `가격 데이터를 가져오지 못했습니다. GitHub Pages 데이터 또는 네트워크를 확인하세요. (${errors.slice(-3).join(", ") || "원인 불명"})`,
   );
 }
 

@@ -23,13 +23,26 @@ Open:
 http://127.0.0.1:4173/
 ```
 
-## Deploy
+## GitHub Pages Deploy
 
-This app needs a Python web process because browsers block direct market-data requests from static pages. Deploy it as a web service, not as GitHub Pages.
+This repository is ready for GitHub Pages. The browser reads cached CSV files from
+`data/`, so no paid web server is required.
 
-Render settings:
+GitHub Actions included:
 
-- Build command: leave empty or use `pip install -r requirements.txt`
-- Start command: `python server.py`
-- Environment variable: `HOST=0.0.0.0`
+- `Deploy GitHub Pages`: publishes the static dashboard on every push to `main`
+- `Update market data`: refreshes `data/*.csv` on weekdays, and can be run manually
 
+In GitHub, open **Settings > Pages** and select **GitHub Actions** as the source.
+
+## Updating Data Locally
+
+```powershell
+uv run --python 3.11 python scripts/update_data.py
+```
+
+The local Python server is still available for development:
+
+```powershell
+uv run --python 3.11 python server.py
+```

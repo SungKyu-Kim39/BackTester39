@@ -1,0 +1,27 @@
+{
+  "symbols": {
+    "000660.KS": "000660.KS.csv",
+    "005930.KS": "005930.KS.csv",
+    "AAPL": "AAPL.csv",
+    "AMZN": "AMZN.csv",
+    "BRK-B": "BRK-B.csv",
+    "DIA": "DIA.csv",
+    "GOOGL": "GOOGL.csv",
+    "IVV": "IVV.csv",
+    "IWM": "IWM.csv",
+    "JEPI": "JEPI.csv",
+    "META": "META.csv",
+    "MSFT": "MSFT.csv",
+    "NVDA": "NVDA.csv",
+    "QQQ": "QQQ.csv",
+    "SCHD": "SCHD.csv",
+    "SPY": "SPY.csv",
+    "TQQQ": "TQQQ.csv",
+    "TSLA": "TSLA.csv",
+    "VGT": "VGT.csv",
+    "VOO": "VOO.csv",
+    "VTI": "VTI.csv",
+    "XLK": "XLK.csv"
+  },
+  "updatedAt": "2026-05-31T07:08:08Z"
+}
