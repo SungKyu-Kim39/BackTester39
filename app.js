@@ -23,31 +23,6 @@ let stocks = [
   { symbol: "000660", yahoo: "000660.KS", name: "SK hynix", market: "KRX", currency: "KRW" },
 ];
 
-function mergeStocks(baseStocks, extraStocks) {
-  const merged = new Map();
-  [...baseStocks, ...extraStocks].forEach((stock) => {
-    if (!stock?.symbol || !stock?.yahoo) return;
-    merged.set(stock.symbol.toUpperCase(), {
-      currency: "USD",
-      market: "US",
-      ...stock,
-    });
-  });
-  return [...merged.values()].sort((a, b) => a.symbol.localeCompare(b.symbol));
-}
-
-async function loadStockUniverse() {
-  try {
-    const response = await fetch("data/stocks.json", { cache: "no-store" });
-    if (!response.ok) return;
-    const payload = await response.json();
-    stocks = mergeStocks(stocks, payload.stocks || []);
-    renderSuggestions();
-  } catch {
-    // The bundled defaults are enough when the expanded universe is unavailable.
-  }
-}
-
 const form = document.querySelector("#backtestForm");
 const searchInput = document.querySelector("#tickerSearch");
 const suggestions = document.querySelector("#suggestions");
@@ -70,11 +45,6 @@ let remoteSuggestionsQuery = "";
 let searchRequestId = 0;
 
 const WORKER_API_BASE = "https://gentle-hat-70b2.kgf7740.workers.dev";
-
-function historyFileName(stock) {
-  const symbol = stock.yahoo || stock.symbol.replace(".", "-");
-  return symbol.replace(/[^A-Z0-9.-]/gi, "_").toUpperCase();
-}
 
 const corsProxies = [
   (url) => `https://r.jina.ai/${url}`,
@@ -288,12 +258,9 @@ async function fetchHistory(stock, startDate) {
   const d1 = toDateKey(start);
   const d2 = toDateKey(today);
   const yahooSymbol = stock.yahoo || stock.symbol.replace(".", "-");
-  const appOrigin = location.protocol === "file:" ? "http://127.0.0.1:4173" : location.origin;
-  const apiUrl = `${appOrigin}/api/history?s=${encodeURIComponent(yahooSymbol)}&d1=${d1}&d2=${d2}`;
   const workerUrl = `${WORKER_API_BASE}/api/history?s=${encodeURIComponent(yahooSymbol)}&d1=${d1}&d2=${d2}`;
-  const staticUrl = `data/${historyFileName(stock)}.csv`;
   const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(yahooSymbol)}?period1=${Math.floor(start.getTime() / 1000)}&period2=${Math.floor(today.getTime() / 1000)}&interval=1d`;
-  const csv = await fetchText(url, { workerUrl, apiUrl, staticUrl, custom: stock.custom });
+  const csv = await fetchText(url, { workerUrl, custom: stock.custom });
   const rows = parseCsv(csv);
   if (rows.length < 2) throw new Error("가격 데이터를 찾을 수 없습니다.");
   return rows;
@@ -306,15 +273,6 @@ async function fetchDividends(stock) {
 
   try {
     const response = await fetch(workerUrl, { cache: "no-store" });
-    if (response.ok) return parseDividends(await response.text());
-  } catch {
-    // Fall back to cached static data below.
-  }
-
-  const staticUrl = `data/${historyFileName(stock)}_dividends.csv`;
-
-  try {
-    const response = await fetch(staticUrl, { cache: "no-store" });
     if (!response.ok) return [];
     return parseDividends(await response.text());
   } catch {
@@ -323,11 +281,9 @@ async function fetchDividends(stock) {
 }
 
 async function fetchText(url, options = {}) {
-  const { workerUrl = null, apiUrl = null, staticUrl = null, custom = false } = options;
+  const { workerUrl = null, custom = false } = options;
   const targets = [
     ...(workerUrl ? [{ label: "Cloudflare Worker", url: workerUrl }] : []),
-    ...(staticUrl ? [{ label: "저장된 GitHub Pages 데이터", url: staticUrl }] : []),
-    ...(apiUrl ? [{ label: "로컬 API", url: apiUrl }] : []),
     { label: "직접 요청", url },
     ...corsProxies.map((proxy, index) => ({ label: `대체 경로 ${index + 1}`, url: proxy(url) })),
   ];
@@ -752,7 +708,6 @@ window.addEventListener("resize", () => {
 });
 
 selectStock(stocks[0]);
-loadStockUniverse();
 syncModeUi();
 syncInputTypeUi();
 drawChart([

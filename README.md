@@ -1,6 +1,6 @@
 # BackTester39
 
-주식과 ETF의 과거 가격 데이터를 기반으로 투자 시나리오를 계산하는 반응형 웹 대시보드입니다.
+주식과 ETF를 과거부터 매수했을 때 현재 평가액과 누적 수익률을 계산하는 반응형 웹 대시보드입니다.
 
 ## 서비스 주소
 
@@ -16,7 +16,7 @@
 - 현재 평가액, 총 투자금, 보유 수량, 누적 수익률 계산
 - 종목 가격 변화와 평가액 변화를 차트로 표시
 - 차트 hover 시 종가, 평가액, 투자금, 배당 현금, 누적 배당 표시
-- 최근 매수 및 배당 이벤트 내역 표시
+- 최초 매수일이 상장 전이면 상장 직후 거래일로 자동 보정
 
 ## 배당 계산 방식
 
@@ -27,37 +27,21 @@
 - `배당 재투자 OFF`: 배당금을 현금으로 누적 보유합니다.
 - `배당 재투자 ON`: 배당금으로 같은 종목을 추가 매수합니다.
 
-## 데이터
+## 데이터 구조
 
-앱은 Cloudflare Worker API를 먼저 호출하고, 실패하면 `data/` 폴더의 CSV 파일을 fallback으로 사용합니다.
+프론트엔드는 GitHub Pages에서 정적으로 서빙하고, 가격/배당/검색 데이터는 Cloudflare Worker가 Yahoo Finance에서 실시간으로 가져옵니다.
 
-Worker API:
+Cloudflare Worker API:
 
 [https://gentle-hat-70b2.kgf7740.workers.dev](https://gentle-hat-70b2.kgf7740.workers.dev)
 
-Worker endpoint:
+주요 endpoint:
 
 - `/api/search?q=AAPL`
 - `/api/history?s=AAPL&d1=20200101&d2=20260531`
 - `/api/dividends?s=AAPL&d1=20200101&d2=20260531`
 
-정적 fallback 데이터:
-
-- 가격 데이터: `data/QQQ.csv`
-- 배당 데이터: `data/QQQ_dividends.csv`
-- 데이터 목록: `data/manifest.json`
-
-현재 데이터에는 기본 ETF/한국 종목에 더해 다음 목록이 포함됩니다.
-
-- 미국 상장사 시가총액 상위 200개
-- Yahoo Finance 거래량 상위 후보를 최근 5거래일 누적 거래량으로 재정렬한 상위 200개
-
-중복을 제거한 현재 계산 가능 종목 수는 `data/stocks.json` 기준 362개입니다.
-
-데이터 출처:
-
-- 시가총액 목록: CompaniesMarketCap 미국 상장사 시가총액 순위
-- 가격, 배당, 거래량 데이터: Yahoo Finance chart API
+이전처럼 CSV 파일을 저장소에 보관하지 않습니다. 따라서 대용량 `data/` 폴더 없이도 Yahoo Finance에서 검색 가능한 종목을 그때그때 조회할 수 있습니다.
 
 ## Cloudflare Worker 배포
 
@@ -73,7 +57,7 @@ Wrangler 없이 Cloudflare 대시보드에서 직접 배포할 수 있습니다.
 
 ## GitHub Pages 배포
 
-이 저장소는 GitHub Pages 배포용으로 구성되어 있습니다.
+이 저장소는 GitHub Pages 배포용 GitHub Actions로 구성되어 있습니다.
 
 GitHub 저장소에서:
 
@@ -84,21 +68,9 @@ GitHub 저장소에서:
 
 배포가 완료되면 서비스 주소에서 대시보드를 사용할 수 있습니다.
 
-## 데이터 자동 갱신
-
-`.github/workflows/update-data.yml` 워크플로가 평일마다 Yahoo Finance 데이터를 가져와 `data/*.csv`와 `data/*_dividends.csv`를 갱신합니다.
-
-수동 갱신도 가능합니다.
-
-```powershell
-uv run --python 3.11 python scripts/update_data.py
-```
-
-갱신된 CSV를 커밋하고 push하면 GitHub Pages에 반영됩니다.
-
 ## 로컬 실행
 
-정적 파일만 확인할 수도 있지만, 개발 중에는 로컬 서버를 켜는 방식이 편합니다.
+개발 중에는 로컬 서버를 켜는 방식이 적합합니다.
 
 ```powershell
 uv run --python 3.11 python server.py
