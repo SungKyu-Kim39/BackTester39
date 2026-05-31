@@ -29,7 +29,19 @@
 
 ## 데이터
 
-브라우저가 GitHub Pages에서 바로 실행될 수 있도록 가격 데이터와 배당 데이터는 `data/` 폴더의 CSV 파일로 저장됩니다.
+앱은 Cloudflare Worker API를 먼저 호출하고, 실패하면 `data/` 폴더의 CSV 파일을 fallback으로 사용합니다.
+
+Worker API:
+
+[https://gentle-hat-70b2.kgf7740.workers.dev](https://gentle-hat-70b2.kgf7740.workers.dev)
+
+Worker endpoint:
+
+- `/api/search?q=AAPL`
+- `/api/history?s=AAPL&d1=20200101&d2=20260531`
+- `/api/dividends?s=AAPL&d1=20200101&d2=20260531`
+
+정적 fallback 데이터:
 
 - 가격 데이터: `data/QQQ.csv`
 - 배당 데이터: `data/QQQ_dividends.csv`
@@ -46,6 +58,18 @@
 
 - 시가총액 목록: CompaniesMarketCap 미국 상장사 시가총액 순위
 - 가격, 배당, 거래량 데이터: Yahoo Finance chart API
+
+## Cloudflare Worker 배포
+
+Wrangler 없이 Cloudflare 대시보드에서 직접 배포할 수 있습니다.
+
+1. Cloudflare Dashboard에서 `Workers & Pages`로 이동
+2. `gentle-hat-70b2` Worker 선택
+3. `Edit code` 또는 `Quick edit` 선택
+4. 저장소의 `worker.js` 내용을 전체 복사해 붙여넣기
+5. `Save and deploy`
+
+배포 후 Worker URL의 `/api/search?q=NVDA`가 JSON을 반환하면 정상입니다.
 
 ## GitHub Pages 배포
 

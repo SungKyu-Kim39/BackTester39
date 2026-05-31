@@ -65,6 +65,11 @@ const ctx = chart.getContext("2d");
 let selectedStock = stocks[0];
 let chartPoints = [];
 let activeSuggestion = -1;
+let remoteSuggestions = [];
+let remoteSuggestionsQuery = "";
+let searchRequestId = 0;
+
+const WORKER_API_BASE = "https://gentle-hat-70b2.kgf7740.workers.dev";
 
 function historyFileName(stock) {
   const symbol = stock.yahoo || stock.symbol.replace(".", "-");
@@ -139,7 +144,13 @@ function renderSuggestions() {
   if (!query) {
     suggestions.classList.remove("visible");
     suggestions.innerHTML = "";
+    remoteSuggestions = [];
+    remoteSuggestionsQuery = "";
     return;
+  }
+
+  if (remoteSuggestionsQuery && remoteSuggestionsQuery !== query) {
+    remoteSuggestions = [];
   }
 
   const matches = stocks
@@ -148,6 +159,13 @@ function renderSuggestions() {
       return haystack.includes(query);
     })
     .slice(0, 7);
+
+  for (const stock of remoteSuggestions) {
+    if (matches.length >= 10) break;
+    if (!matches.some((match) => match.yahoo === stock.yahoo || match.symbol === stock.symbol)) {
+      matches.push(stock);
+    }
+  }
 
   const customSymbol = query.toUpperCase();
   if (
@@ -180,6 +198,32 @@ function renderSuggestions() {
   suggestions.querySelectorAll(".suggestion").forEach((button, index) => {
     button.addEventListener("click", () => selectStock(matches[index]));
   });
+  requestRemoteSuggestions(query);
+}
+
+async function requestRemoteSuggestions(query) {
+  if (query.length < 2) return;
+  if (remoteSuggestionsQuery === query) return;
+  const requestId = ++searchRequestId;
+
+  try {
+    const url = `${WORKER_API_BASE}/api/search?q=${encodeURIComponent(query)}`;
+    const response = await fetch(url, { cache: "no-store" });
+    if (!response.ok) return;
+    const payload = await response.json();
+    if (requestId !== searchRequestId) return;
+
+    remoteSuggestionsQuery = query;
+    remoteSuggestions = (payload.quotes || []).map((stock) => ({
+      currency: "USD",
+      market: "Yahoo Finance",
+      ...stock,
+      custom: true,
+    }));
+    renderSuggestions();
+  } catch {
+    // Static suggestions and direct ticker input remain available.
+  }
 }
 
 function selectStock(stock) {
@@ -246,16 +290,27 @@ async function fetchHistory(stock, startDate) {
   const yahooSymbol = stock.yahoo || stock.symbol.replace(".", "-");
   const appOrigin = location.protocol === "file:" ? "http://127.0.0.1:4173" : location.origin;
   const apiUrl = `${appOrigin}/api/history?s=${encodeURIComponent(yahooSymbol)}&d1=${d1}&d2=${d2}`;
+  const workerUrl = `${WORKER_API_BASE}/api/history?s=${encodeURIComponent(yahooSymbol)}&d1=${d1}&d2=${d2}`;
   const staticUrl = `data/${historyFileName(stock)}.csv`;
   const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(yahooSymbol)}?period1=${Math.floor(start.getTime() / 1000)}&period2=${Math.floor(today.getTime() / 1000)}&interval=1d`;
-  const csv = await fetchText(url, { apiUrl, staticUrl, custom: stock.custom });
+  const csv = await fetchText(url, { workerUrl, apiUrl, staticUrl, custom: stock.custom });
   const rows = parseCsv(csv);
   if (rows.length < 2) throw new Error("가격 데이터를 찾을 수 없습니다.");
   return rows;
 }
 
 async function fetchDividends(stock) {
-  if (stock.custom) return [];
+  const today = new Date();
+  const yahooSymbol = stock.yahoo || stock.symbol.replace(".", "-");
+  const workerUrl = `${WORKER_API_BASE}/api/dividends?s=${encodeURIComponent(yahooSymbol)}&d1=19000101&d2=${toDateKey(today)}`;
+
+  try {
+    const response = await fetch(workerUrl, { cache: "no-store" });
+    if (response.ok) return parseDividends(await response.text());
+  } catch {
+    // Fall back to cached static data below.
+  }
+
   const staticUrl = `data/${historyFileName(stock)}_dividends.csv`;
 
   try {
@@ -268,8 +323,9 @@ async function fetchDividends(stock) {
 }
 
 async function fetchText(url, options = {}) {
-  const { apiUrl = null, staticUrl = null, custom = false } = options;
+  const { workerUrl = null, apiUrl = null, staticUrl = null, custom = false } = options;
   const targets = [
+    ...(workerUrl ? [{ label: "Cloudflare Worker", url: workerUrl }] : []),
     ...(staticUrl ? [{ label: "저장된 GitHub Pages 데이터", url: staticUrl }] : []),
     ...(apiUrl ? [{ label: "로컬 API", url: apiUrl }] : []),
     { label: "직접 요청", url },
@@ -295,7 +351,7 @@ async function fetchText(url, options = {}) {
 
   if (custom) {
     throw new Error(
-      "GitHub Pages 배포판에서는 저장된 종목만 계산할 수 있습니다. 새 티커는 data 폴더에 CSV를 추가하거나 로컬 서버에서 실행하세요.",
+      "해당 티커 데이터를 가져오지 못했습니다. Cloudflare Worker 배포 상태 또는 Yahoo Finance 티커를 확인하세요.",
     );
   }
 
