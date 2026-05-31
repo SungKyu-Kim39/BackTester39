@@ -194,6 +194,24 @@ function parseCsv(csv) {
   return rows;
 }
 
+function parseDividends(csv) {
+  if (!csv || !csv.trim()) return [];
+  const headerIndex = csv.indexOf("Date,Dividend");
+  if (headerIndex >= 0) {
+    csv = csv.slice(headerIndex);
+  }
+
+  return csv
+    .trim()
+    .split(/\r?\n/)
+    .slice(1)
+    .map((line) => {
+      const [date, dividend] = line.split(",");
+      return { date, dividend: Number(dividend) };
+    })
+    .filter((row) => row.date && Number.isFinite(row.dividend) && row.dividend > 0);
+}
+
 async function fetchHistory(stock, startDate) {
   const start = new Date(startDate);
   start.setFullYear(start.getFullYear() - 1);
@@ -209,6 +227,19 @@ async function fetchHistory(stock, startDate) {
   const rows = parseCsv(csv);
   if (rows.length < 2) throw new Error("가격 데이터를 찾을 수 없습니다.");
   return rows;
+}
+
+async function fetchDividends(stock) {
+  if (stock.custom) return [];
+  const staticUrl = `data/${historyFileName(stock)}_dividends.csv`;
+
+  try {
+    const response = await fetch(staticUrl, { cache: "no-store" });
+    if (!response.ok) return [];
+    return parseDividends(await response.text());
+  } catch {
+    return [];
+  }
 }
 
 async function fetchText(url, options = {}) {
@@ -257,17 +288,26 @@ function addPeriod(date, frequency) {
   return next;
 }
 
-function simulate(rows, options) {
+function simulate(rows, dividends, options) {
   const start = new Date(options.startDate);
   const filtered = rows.filter((row) => new Date(row.date) >= start);
   if (!filtered.length) throw new Error("선택한 매수일 이후 가격 데이터가 없습니다.");
 
   let shares = 0;
   let invested = 0;
+  let dividendCash = 0;
+  let dividendsReceived = 0;
+  let dividendsReinvested = 0;
   let nextBuyDate = new Date(options.startDate);
   let hasSingleBuy = false;
   const trades = [];
   const series = [];
+  const dividendsByDate = new Map();
+
+  for (const dividend of dividends) {
+    if (!dividendsByDate.has(dividend.date)) dividendsByDate.set(dividend.date, []);
+    dividendsByDate.get(dividend.date).push(dividend);
+  }
 
   for (const row of filtered) {
     const rowDate = new Date(row.date);
@@ -302,6 +342,7 @@ function simulate(rows, options) {
         shares += boughtShares;
         invested += spent;
         trades.push({
+          type: "buy",
           date: row.date,
           price: row.close,
           shares: boughtShares,
@@ -310,11 +351,51 @@ function simulate(rows, options) {
       }
     }
 
-    const value = shares * row.close;
+    const dayDividends = dividendsByDate.get(row.date) || [];
+    for (const dividend of dayDividends) {
+      const eligibleShares = Math.floor(shares);
+      const received = eligibleShares * dividend.dividend;
+      if (received <= 0) continue;
+
+      dividendsReceived += received;
+
+      if (options.dividendReinvest) {
+        const reinvestedShares = received / row.close;
+        shares += reinvestedShares;
+        dividendsReinvested += received;
+        trades.push({
+          type: "dividend-reinvest",
+          date: row.date,
+          price: row.close,
+          shares: reinvestedShares,
+          spent: received,
+          dividendPerShare: dividend.dividend,
+          eligibleShares,
+        });
+      } else {
+        dividendCash += received;
+        trades.push({
+          type: "dividend-cash",
+          date: row.date,
+          price: row.close,
+          shares: 0,
+          spent: received,
+          dividendPerShare: dividend.dividend,
+          eligibleShares,
+        });
+      }
+    }
+
+    const stockValue = shares * row.close;
+    const value = stockValue + dividendCash;
     series.push({
       date: row.date,
       price: row.close,
       value,
+      stockValue,
+      dividendCash,
+      dividendsReceived,
+      dividendsReinvested,
       invested,
       shares,
       returnRate: invested > 0 ? (value - invested) / invested : 0,
@@ -326,7 +407,7 @@ function simulate(rows, options) {
     throw new Error("해당 조건으로 체결된 매수가 없습니다. 금액 또는 수량을 늘려보세요.");
   }
 
-  return { series, trades, latest };
+  return { series, trades, latest, dividendsReceived, dividendsReinvested, dividendCash };
 }
 
 function updateMetrics(result) {
@@ -339,7 +420,7 @@ function updateMetrics(result) {
   returnEl.classList.toggle("positive", latest.returnRate >= 0);
   returnEl.classList.toggle("negative", latest.returnRate < 0);
   document.querySelector("#chartSubtitle").textContent =
-    `${result.series[0].date}부터 ${latest.date}까지 · 최신 종가 ${formatMoney(latest.price)}`;
+    `${result.series[0].date}부터 ${latest.date}까지 · 최신 종가 ${formatMoney(latest.price)} · 누적 배당 ${formatMoney(result.dividendsReceived || 0)}`;
 }
 
 function updateTrades(trades) {
@@ -350,15 +431,22 @@ function updateTrades(trades) {
     .map(
       (trade) => `
         <tr>
+          <td>${tradeLabel(trade)}</td>
           <td>${trade.date}</td>
           <td>${formatMoney(trade.price)}</td>
-          <td>${number.format(trade.shares)}</td>
+          <td>${trade.shares > 0 ? number.format(trade.shares) : "-"}</td>
           <td>${formatMoney(trade.spent)}</td>
         </tr>
       `,
     )
     .join("");
   document.querySelector("#tradesBody").innerHTML = rows;
+}
+
+function tradeLabel(trade) {
+  if (trade.type === "dividend-reinvest") return "배당 재투자";
+  if (trade.type === "dividend-cash") return "배당 현금";
+  return "매수";
 }
 
 function map(value, min, max, start, end) {
@@ -461,6 +549,8 @@ function showTooltip(event) {
     종가: ${formatMoney(point.price)}<br>
     평가액: ${formatMoney(point.value)}<br>
     투자금: ${formatMoney(point.invested)}<br>
+    배당 현금: ${formatMoney(point.dividendCash || 0)}<br>
+    누적 배당: ${formatMoney(point.dividendsReceived || 0)}<br>
     누적수익률: ${percent.format(point.returnRate)}
   `;
   tooltip.style.left = `${Math.min(Math.max(x, 105), rect.width - 105)}px`;
@@ -482,6 +572,7 @@ function readOptions() {
     amount: Number(document.querySelector("#amount").value),
     shares: Number(document.querySelector("#shares").value),
     fractional: document.querySelector("#fractional").checked,
+    dividendReinvest: document.querySelector("#dividendReinvest").checked,
   };
 }
 
@@ -503,14 +594,17 @@ async function runBacktest() {
     validateOptions(options);
     button.disabled = true;
     setStatus(`${selectedStock.symbol} 과거 데이터를 불러오는 중입니다.`);
-    const rows = await fetchHistory(selectedStock, options.startDate);
+    const [rows, dividends] = await Promise.all([
+      fetchHistory(selectedStock, options.startDate),
+      fetchDividends(selectedStock),
+    ]);
     setStatus("데이터 로딩 완료. 매수 시뮬레이션을 계산하는 중입니다.");
-    const result = simulate(rows, options);
+    const result = simulate(rows, dividends, options);
     chartPoints = result.series;
     updateMetrics(result);
     updateTrades(result.trades);
     drawChart(chartPoints);
-    setStatus(`${selectedStock.symbol} 기준 ${result.trades.length}건의 매수를 계산했습니다.`);
+    setStatus(`${selectedStock.symbol} 기준 ${result.trades.length}건의 매수/배당 이벤트를 계산했습니다.`);
   } catch (error) {
     setStatus(error.message, true);
   } finally {

@@ -1,27 +1,93 @@
 {
   "symbols": {
-    "000660.KS": "000660.KS.csv",
-    "005930.KS": "005930.KS.csv",
-    "AAPL": "AAPL.csv",
-    "AMZN": "AMZN.csv",
-    "BRK-B": "BRK-B.csv",
-    "DIA": "DIA.csv",
-    "GOOGL": "GOOGL.csv",
-    "IVV": "IVV.csv",
-    "IWM": "IWM.csv",
-    "JEPI": "JEPI.csv",
-    "META": "META.csv",
-    "MSFT": "MSFT.csv",
-    "NVDA": "NVDA.csv",
-    "QQQ": "QQQ.csv",
-    "SCHD": "SCHD.csv",
-    "SPY": "SPY.csv",
-    "TQQQ": "TQQQ.csv",
-    "TSLA": "TSLA.csv",
-    "VGT": "VGT.csv",
-    "VOO": "VOO.csv",
-    "VTI": "VTI.csv",
-    "XLK": "XLK.csv"
+    "000660.KS": {
+      "dividends": "000660.KS_dividends.csv",
+      "prices": "000660.KS.csv"
+    },
+    "005930.KS": {
+      "dividends": "005930.KS_dividends.csv",
+      "prices": "005930.KS.csv"
+    },
+    "AAPL": {
+      "dividends": "AAPL_dividends.csv",
+      "prices": "AAPL.csv"
+    },
+    "AMZN": {
+      "dividends": "AMZN_dividends.csv",
+      "prices": "AMZN.csv"
+    },
+    "BRK-B": {
+      "dividends": "BRK-B_dividends.csv",
+      "prices": "BRK-B.csv"
+    },
+    "DIA": {
+      "dividends": "DIA_dividends.csv",
+      "prices": "DIA.csv"
+    },
+    "GOOGL": {
+      "dividends": "GOOGL_dividends.csv",
+      "prices": "GOOGL.csv"
+    },
+    "IVV": {
+      "dividends": "IVV_dividends.csv",
+      "prices": "IVV.csv"
+    },
+    "IWM": {
+      "dividends": "IWM_dividends.csv",
+      "prices": "IWM.csv"
+    },
+    "JEPI": {
+      "dividends": "JEPI_dividends.csv",
+      "prices": "JEPI.csv"
+    },
+    "META": {
+      "dividends": "META_dividends.csv",
+      "prices": "META.csv"
+    },
+    "MSFT": {
+      "dividends": "MSFT_dividends.csv",
+      "prices": "MSFT.csv"
+    },
+    "NVDA": {
+      "dividends": "NVDA_dividends.csv",
+      "prices": "NVDA.csv"
+    },
+    "QQQ": {
+      "dividends": "QQQ_dividends.csv",
+      "prices": "QQQ.csv"
+    },
+    "SCHD": {
+      "dividends": "SCHD_dividends.csv",
+      "prices": "SCHD.csv"
+    },
+    "SPY": {
+      "dividends": "SPY_dividends.csv",
+      "prices": "SPY.csv"
+    },
+    "TQQQ": {
+      "dividends": "TQQQ_dividends.csv",
+      "prices": "TQQQ.csv"
+    },
+    "TSLA": {
+      "dividends": "TSLA_dividends.csv",
+      "prices": "TSLA.csv"
+    },
+    "VGT": {
+      "dividends": "VGT_dividends.csv",
+      "prices": "VGT.csv"
+    },
+    "VOO": {
+      "dividends": "VOO_dividends.csv",
+      "prices": "VOO.csv"
+    },
+    "VTI": {
+      "dividends": "VTI_dividends.csv",
+      "prices": "VTI.csv"
+    },
+    "XLK": {
+      "dividends": "XLK_dividends.csv",
+      "prices": "XLK.csv"
+    }
   },
-  "updatedAt": "2026-05-31T07:08:08Z"
+  "updatedAt": "2026-05-31T07:16:52Z"
 }

@@ -90,6 +90,14 @@
                   <strong>소수점 매수</strong>
                 </label>
               </div>
+              <div class="field">
+                <span class="label-text">배당 처리</span>
+                <label class="toggle">
+                  <input id="dividendReinvest" type="checkbox" />
+                  <span></span>
+                  <strong>배당 재투자</strong>
+                </label>
+              </div>
             </div>
 
             <button class="primary-action" type="submit">
@@ -157,15 +165,16 @@
               <table>
                 <thead>
                   <tr>
+                    <th>구분</th>
                     <th>일자</th>
                     <th>가격</th>
                     <th>수량</th>
-                    <th>투자금</th>
+                    <th>금액</th>
                   </tr>
                 </thead>
                 <tbody id="tradesBody">
                   <tr>
-                    <td colspan="4">계산 결과가 여기에 표시됩니다.</td>
+                    <td colspan="5">계산 결과가 여기에 표시됩니다.</td>
                   </tr>
                 </tbody>
               </table>

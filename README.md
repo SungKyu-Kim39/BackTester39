@@ -8,6 +8,7 @@ Responsive web dashboard for simple stock and ETF backtesting.
 - One-time or recurring purchase simulation
 - Amount-based or share-based buying
 - Fractional or integer-share purchase mode
+- Dividend cash holding or dividend reinvestment
 - Price and portfolio-value chart with hover details
 - Local Python proxy for Yahoo Finance daily chart data
 

@@ -68,7 +68,31 @@ def yahoo_chart_to_csv(payload):
     return "\n".join(lines) + "\n"
 
 
-def fetch_symbol(symbol):
+def yahoo_dividends_to_csv(payload):
+    chart = payload.get("chart", {})
+    if chart.get("error"):
+        raise ValueError(chart["error"].get("description", "Yahoo chart error"))
+
+    result = chart["result"][0]
+    dividends = result.get("events", {}).get("dividends", {})
+    rows = []
+
+    for event in dividends.values():
+        timestamp = event.get("date")
+        amount = event.get("amount")
+        if timestamp is None or amount is None:
+            continue
+        date = dt.datetime.utcfromtimestamp(timestamp).strftime("%Y-%m-%d")
+        rows.append((date, amount))
+
+    lines = ["Date,Dividend"]
+    for date, amount in sorted(rows):
+        lines.append(f"{date},{amount}")
+
+    return "\n".join(lines) + "\n"
+
+
+def fetch_payload(symbol):
     start = dt.datetime(1990, 1, 1)
     end = dt.datetime.utcnow() + dt.timedelta(days=1)
     query = urlencode(
@@ -76,6 +100,7 @@ def fetch_symbol(symbol):
             "period1": int(mktime(start.timetuple())),
             "period2": int(mktime(end.timetuple())),
             "interval": "1d",
+            "events": "div",
         }
     )
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?{query}"
@@ -87,8 +112,7 @@ def fetch_symbol(symbol):
         },
     )
     with urlopen(request, timeout=30) as response:
-        payload = json.loads(response.read().decode("utf-8"))
-    return yahoo_chart_to_csv(payload)
+        return json.loads(response.read().decode("utf-8"))
 
 
 def main():
@@ -99,11 +123,22 @@ def main():
     }
 
     for symbol in SYMBOLS:
-        csv = fetch_symbol(symbol)
+        payload = fetch_payload(symbol)
+        csv = yahoo_chart_to_csv(payload)
+        dividends_csv = yahoo_dividends_to_csv(payload)
         file_name = f"{safe_name(symbol)}.csv"
+        dividends_file_name = f"{safe_name(symbol)}_dividends.csv"
         (DATA_DIR / file_name).write_text(csv, encoding="utf-8", newline="\n")
-        manifest["symbols"][symbol] = file_name
-        print(f"updated {symbol} -> data/{file_name}")
+        (DATA_DIR / dividends_file_name).write_text(
+            dividends_csv,
+            encoding="utf-8",
+            newline="\n",
+        )
+        manifest["symbols"][symbol] = {
+            "prices": file_name,
+            "dividends": dividends_file_name,
+        }
+        print(f"updated {symbol} -> data/{file_name}, data/{dividends_file_name}")
 
     (DATA_DIR / "manifest.json").write_text(
         json.dumps(manifest, indent=2, sort_keys=True) + "\n",
