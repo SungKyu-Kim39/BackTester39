@@ -188,23 +188,12 @@
                 <strong id="compareLeader">-</strong>
               </article>
             </div>
-            <div class="compare-cards">
-              <article class="compare-card compare-a">
-                <div>
-                  <span id="compareASymbol">AAPL</span>
-                  <strong id="compareAValue">$0</strong>
-                  <em id="compareAReturn">0.00%</em>
-                </div>
-                <div class="compare-bar"><span id="compareABar"></span></div>
-              </article>
-              <article class="compare-card compare-b">
-                <div>
-                  <span id="compareBSymbol">MSFT</span>
-                  <strong id="compareBValue">$0</strong>
-                  <em id="compareBReturn">0.00%</em>
-                </div>
-                <div class="compare-bar"><span id="compareBBar"></span></div>
-              </article>
+            <div class="compare-legend">
+              <span><i class="compare-a-dot"></i><b id="compareASymbol">AAPL</b> <em id="compareAReturn">0.00%</em></span>
+              <span><i class="compare-b-dot"></i><b id="compareBSymbol">MSFT</b> <em id="compareBReturn">0.00%</em></span>
+            </div>
+            <div class="compare-chart-wrap">
+              <canvas id="compareChart" width="1200" height="620"></canvas>
             </div>
           </div>
 

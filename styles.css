@@ -449,7 +449,7 @@ select:focus {
 .compare-header,
 .compare-controls,
 .compare-summary,
-.compare-card > div:first-child {
+.compare-legend {
   display: flex;
   align-items: center;
 }
@@ -465,7 +465,7 @@ select:focus {
 
 .compare-header p,
 .compare-summary span,
-.compare-card span {
+.compare-legend {
   color: var(--muted);
 }
 
@@ -501,7 +501,7 @@ select:focus {
 }
 
 .compare-summary article,
-.compare-card {
+.compare-chart-wrap {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
@@ -509,63 +509,57 @@ select:focus {
   min-width: 0;
 }
 
-.compare-summary span,
-.compare-card span {
+.compare-summary span {
   display: block;
   margin-bottom: 8px;
   font-size: 0.8rem;
   font-weight: 800;
 }
 
-.compare-summary strong,
-.compare-card strong {
+.compare-summary strong {
   display: block;
   overflow-wrap: anywhere;
   font-size: clamp(1.1rem, 2vw, 1.6rem);
 }
 
-.compare-cards {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 12px;
+.compare-legend {
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 16px;
+  font-size: 0.88rem;
 }
 
-.compare-card > div:first-child {
-  justify-content: space-between;
-  gap: 12px;
+.compare-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.compare-card em {
-  display: block;
-  margin-top: 8px;
+.compare-legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.compare-a-dot {
+  background: var(--accent);
+}
+
+.compare-b-dot {
+  background: var(--accent-2);
+}
+
+.compare-legend em {
   font-style: normal;
   font-weight: 900;
 }
 
-.compare-bar {
-  overflow: hidden;
-  height: 12px;
-  border-radius: 999px;
-  background: #0c111a;
-  margin-top: 16px;
-}
-
-.compare-bar span {
-  display: block;
-  width: 0%;
-  height: 100%;
-  margin: 0;
-  border-radius: inherit;
-  transition: width 120ms linear;
-}
-
-.compare-a .compare-bar span {
-  background: var(--accent);
-}
-
-.compare-b .compare-bar span {
-  background: var(--accent-2);
+.compare-chart-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7.8;
+  min-height: 320px;
+  margin-top: 12px;
 }
 
 .chart-header h3,
@@ -715,8 +709,7 @@ td {
   .topbar,
   .chart-header,
   .table-header,
-  .compare-header,
-  .compare-card > div:first-child {
+  .compare-header {
     align-items: flex-start;
     flex-direction: column;
   }
@@ -729,9 +722,13 @@ td {
     flex: 1;
   }
 
-  .compare-summary,
-  .compare-cards {
+  .compare-summary {
     grid-template-columns: 1fr;
+  }
+
+  .compare-chart-wrap {
+    aspect-ratio: 1 / 1;
+    min-height: 300px;
   }
 
   .data-source {

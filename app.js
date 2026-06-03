@@ -38,8 +38,10 @@ const sharesFields = document.querySelectorAll(".shares-field");
 const statusBox = document.querySelector("#status");
 const selectedTitle = document.querySelector("#selectedTitle");
 const chart = document.querySelector("#performanceChart");
+const compareChart = document.querySelector("#compareChart");
 const tooltip = document.querySelector("#tooltip");
 const ctx = chart.getContext("2d");
+const compareCtx = compareChart.getContext("2d");
 
 let selectedStock = stocks[0];
 let selectedCompareStock = stocks[1];
@@ -871,10 +873,108 @@ function resetCompareAnimation() {
   document.querySelector("#comparePlay").textContent = "재생";
 }
 
+function drawCompareChart(activeIndex = compareFrames.length - 1) {
+  if (!compareFrames.length) return;
+  const rect = compareChart.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+  compareChart.width = Math.max(800, Math.floor(rect.width * dpr));
+  compareChart.height = Math.max(420, Math.floor(rect.height * dpr));
+  compareCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  const width = compareChart.width / dpr;
+  const height = compareChart.height / dpr;
+  compareCtx.clearRect(0, 0, width, height);
+
+  const pad = { top: 26, right: 78, bottom: 42, left: 62 };
+  const plotW = width - pad.left - pad.right;
+  const plotH = height - pad.top - pad.bottom;
+  const visibleFrames = compareFrames.slice(0, Math.max(1, activeIndex + 1));
+  const returns = compareFrames.flatMap((frame) => [frame.a.returnRate || 0, frame.b.returnRate || 0]);
+  const rawMinReturn = Math.min(0, ...returns);
+  const rawMaxReturn = Math.max(0, ...returns);
+  const latestReturn = Math.max(Math.abs(returns.at(-1) || 0), Math.abs(returns.at(-2) || 0));
+  const returnInterval = returnGuideInterval(latestReturn, rawMinReturn, rawMaxReturn);
+  const returnPadding = Math.max(returnInterval * 0.14, (rawMaxReturn - rawMinReturn) * 0.08);
+  const minReturn = Math.floor((rawMinReturn - returnPadding) / returnInterval) * returnInterval;
+  const maxReturn = Math.ceil((rawMaxReturn + returnPadding) / returnInterval) * returnInterval;
+  const xFor = (index) => pad.left + (index / Math.max(1, compareFrames.length - 1)) * plotW;
+  const yFor = (value) => map(value || 0, minReturn, maxReturn, pad.top + plotH, pad.top);
+
+  compareCtx.font = "12px Inter, system-ui, sans-serif";
+  compareCtx.lineWidth = 1;
+  compareCtx.strokeStyle = "rgba(255,255,255,0.07)";
+  compareCtx.fillStyle = "#91a0b5";
+  for (let i = 0; i <= 4; i += 1) {
+    const y = pad.top + (plotH / 4) * i;
+    compareCtx.beginPath();
+    compareCtx.moveTo(pad.left, y);
+    compareCtx.lineTo(width - pad.right, y);
+    compareCtx.stroke();
+    const label = percent.format(map(i, 0, 4, maxReturn, minReturn));
+    compareCtx.fillText(label, width - pad.right + 10, y + 4);
+  }
+
+  const firstGuide = Math.ceil(minReturn / returnInterval) * returnInterval;
+  for (let value = firstGuide; value <= maxReturn + 0.0001; value += returnInterval) {
+    const y = yFor(value);
+    if (Math.abs(value) < 0.0001) {
+      compareCtx.strokeStyle = "rgba(250, 204, 21, 0.9)";
+      compareCtx.setLineDash([]);
+    } else {
+      compareCtx.strokeStyle = "rgba(255, 82, 82, 0.34)";
+      compareCtx.setLineDash([5, 7]);
+    }
+    compareCtx.beginPath();
+    compareCtx.moveTo(pad.left, y);
+    compareCtx.lineTo(width - pad.right, y);
+    compareCtx.stroke();
+    compareCtx.setLineDash([]);
+  }
+
+  drawCompareLine(visibleFrames, xFor, (frame) => yFor(frame.a.returnRate), "rgba(46, 229, 157, 1)", 2.8);
+  drawCompareLine(visibleFrames, xFor, (frame) => yFor(frame.b.returnRate), "rgba(103, 167, 255, 1)", 2.8);
+
+  const activeFrame = compareFrames[Math.max(0, Math.min(compareFrames.length - 1, activeIndex))];
+  const activeX = xFor(Math.max(0, Math.min(compareFrames.length - 1, activeIndex)));
+  compareCtx.strokeStyle = "rgba(255,255,255,0.2)";
+  compareCtx.beginPath();
+  compareCtx.moveTo(activeX, pad.top);
+  compareCtx.lineTo(activeX, pad.top + plotH);
+  compareCtx.stroke();
+  drawComparePoint(activeX, yFor(activeFrame.a.returnRate), "rgba(46, 229, 157, 1)");
+  drawComparePoint(activeX, yFor(activeFrame.b.returnRate), "rgba(103, 167, 255, 1)");
+
+  compareCtx.fillStyle = "#91a0b5";
+  const dateSteps = Math.min(5, compareFrames.length - 1);
+  for (let i = 0; i <= dateSteps; i += 1) {
+    const index = Math.round((compareFrames.length - 1) * (i / dateSteps));
+    const x = xFor(index);
+    compareCtx.fillText(compareFrames[index].date.slice(2), x - 22, height - 14);
+  }
+}
+
+function drawCompareLine(frames, xFor, yFor, color, width) {
+  compareCtx.strokeStyle = color;
+  compareCtx.lineWidth = width;
+  compareCtx.beginPath();
+  frames.forEach((frame, index) => {
+    const x = xFor(index);
+    const y = yFor(frame);
+    if (index === 0) compareCtx.moveTo(x, y);
+    else compareCtx.lineTo(x, y);
+  });
+  compareCtx.stroke();
+}
+
+function drawComparePoint(x, y, color) {
+  compareCtx.fillStyle = color;
+  compareCtx.beginPath();
+  compareCtx.arc(x, y, 4, 0, Math.PI * 2);
+  compareCtx.fill();
+}
+
 function renderCompareFrame(index) {
   if (!compareFrames.length) return;
   const frame = compareFrames[Math.max(0, Math.min(compareFrames.length - 1, index))];
-  const latestMaxValue = Math.max(...compareFrames.map((item) => item.a.value), ...compareFrames.map((item) => item.b.value), 1);
   const gap = frame.a.value - frame.b.value;
   const leader =
     Math.abs(gap) < 0.01 ? "동률" : gap > 0 ? selectedStock.symbol : selectedCompareStock.symbol;
@@ -887,16 +987,13 @@ function renderCompareFrame(index) {
   document.querySelector("#compareLeader").textContent = leader;
   document.querySelector("#compareASymbol").textContent = selectedStock.symbol;
   document.querySelector("#compareBSymbol").textContent = selectedCompareStock.symbol;
-  document.querySelector("#compareAValue").textContent = formatMoneyFor(frame.a.value, selectedStock);
-  document.querySelector("#compareBValue").textContent = formatMoneyFor(frame.b.value, selectedCompareStock);
   document.querySelector("#compareAReturn").textContent = percent.format(frame.a.returnRate);
   document.querySelector("#compareBReturn").textContent = percent.format(frame.b.returnRate);
   document.querySelector("#compareAReturn").classList.toggle("positive", frame.a.returnRate >= 0);
   document.querySelector("#compareAReturn").classList.toggle("negative", frame.a.returnRate < 0);
   document.querySelector("#compareBReturn").classList.toggle("positive", frame.b.returnRate >= 0);
   document.querySelector("#compareBReturn").classList.toggle("negative", frame.b.returnRate < 0);
-  document.querySelector("#compareABar").style.width = `${Math.max(2, (frame.a.value / latestMaxValue) * 100)}%`;
-  document.querySelector("#compareBBar").style.width = `${Math.max(2, (frame.b.value / latestMaxValue) * 100)}%`;
+  drawCompareChart(index);
 }
 
 function playCompareAnimation() {
@@ -1069,6 +1166,7 @@ chart.addEventListener("mousemove", showTooltip);
 chart.addEventListener("mouseleave", hideTooltip);
 window.addEventListener("resize", () => {
   if (chartPoints.length) drawChart(chartPoints);
+  if (compareFrames.length) drawCompareChart();
 });
 
 selectStock(stocks[0]);
