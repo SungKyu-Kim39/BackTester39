@@ -19,11 +19,32 @@
           </div>
 
           <form id="backtestForm" autocomplete="off">
+            <div class="field">
+              <span class="label-text">시뮬레이션 모드</span>
+              <div class="segmented" role="radiogroup" aria-label="시뮬레이션 모드">
+                <label>
+                  <input type="radio" name="simulationMode" value="single" checked />
+                  <span>단일 종목</span>
+                </label>
+                <label>
+                  <input type="radio" name="simulationMode" value="compare" />
+                  <span>2종목 비교</span>
+                </label>
+              </div>
+            </div>
+
             <div class="field search-field">
               <label for="tickerSearch">기업명 또는 티커</label>
               <input id="tickerSearch" type="search" placeholder="예: Apple, AAPL, TSLA" />
               <div id="suggestions" class="suggestions" role="listbox"></div>
               <p class="hint">미국 종목은 티커만 입력해도 됩니다. 예: MSFT</p>
+            </div>
+
+            <div id="compareStockField" class="field search-field hidden">
+              <label for="compareTickerSearch">비교 종목</label>
+              <input id="compareTickerSearch" type="search" placeholder="예: NVIDIA, NVDA, QQQ" />
+              <div id="compareSuggestions" class="suggestions" role="listbox"></div>
+              <p class="hint">같은 조건으로 두 종목의 투자 결과를 비교합니다.</p>
             </div>
 
             <div class="field">
@@ -120,7 +141,7 @@
             <div class="data-source">Yahoo Finance 일봉 데이터</div>
           </div>
 
-          <div class="metrics">
+          <div class="metrics single-result">
             <article class="metric-card">
               <span>현재 평가액</span>
               <strong id="metricValue">$0</strong>
@@ -139,7 +160,55 @@
             </article>
           </div>
 
-          <div class="chart-section">
+          <div id="comparePanel" class="compare-panel hidden">
+            <div class="compare-header">
+              <div>
+                <h3>2종목 비교 애니메이션</h3>
+                <p id="compareDate">계산 후 날짜 흐름에 따라 결과가 표시됩니다.</p>
+              </div>
+              <div class="compare-controls">
+                <button id="comparePlay" type="button" class="icon-action">재생</button>
+                <button id="compareReset" type="button" class="icon-action">처음</button>
+              </div>
+            </div>
+            <div class="compare-progress">
+              <span id="compareProgressFill"></span>
+            </div>
+            <div class="compare-summary">
+              <article>
+                <span>총 투자금</span>
+                <strong id="compareInvested">$0</strong>
+              </article>
+              <article>
+                <span>평가액 차이</span>
+                <strong id="compareGap">$0</strong>
+              </article>
+              <article>
+                <span>현재 우위</span>
+                <strong id="compareLeader">-</strong>
+              </article>
+            </div>
+            <div class="compare-cards">
+              <article class="compare-card compare-a">
+                <div>
+                  <span id="compareASymbol">AAPL</span>
+                  <strong id="compareAValue">$0</strong>
+                  <em id="compareAReturn">0.00%</em>
+                </div>
+                <div class="compare-bar"><span id="compareABar"></span></div>
+              </article>
+              <article class="compare-card compare-b">
+                <div>
+                  <span id="compareBSymbol">MSFT</span>
+                  <strong id="compareBValue">$0</strong>
+                  <em id="compareBReturn">0.00%</em>
+                </div>
+                <div class="compare-bar"><span id="compareBBar"></span></div>
+              </article>
+            </div>
+          </div>
+
+          <div class="chart-section single-result">
             <div class="chart-header">
               <div>
                 <h3>가격 변화와 평가액 변화</h3>
@@ -157,7 +226,7 @@
             </div>
           </div>
 
-          <div class="table-section">
+          <div class="table-section single-result">
             <div class="table-header">
               <h3>최근 체결 내역</h3>
               <span id="tradeCount">0건</span>

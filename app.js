@@ -26,6 +26,10 @@ let stocks = [
 const form = document.querySelector("#backtestForm");
 const searchInput = document.querySelector("#tickerSearch");
 const suggestions = document.querySelector("#suggestions");
+const compareStockField = document.querySelector("#compareStockField");
+const compareSearchInput = document.querySelector("#compareTickerSearch");
+const compareSuggestions = document.querySelector("#compareSuggestions");
+const simulationModeInputs = document.querySelectorAll("input[name='simulationMode']");
 const buyModeInputs = document.querySelectorAll("input[name='buyMode']");
 const inputTypeInputs = document.querySelectorAll("input[name='inputType']");
 const recurringOnly = document.querySelectorAll(".recurring-only");
@@ -38,11 +42,19 @@ const tooltip = document.querySelector("#tooltip");
 const ctx = chart.getContext("2d");
 
 let selectedStock = stocks[0];
+let selectedCompareStock = stocks[1];
 let chartPoints = [];
 let activeSuggestion = -1;
+let activeCompareSuggestion = -1;
 let remoteSuggestions = [];
 let remoteSuggestionsQuery = "";
+let remoteCompareSuggestions = [];
+let remoteCompareSuggestionsQuery = "";
 let searchRequestId = 0;
+let compareSearchRequestId = 0;
+let compareFrames = [];
+let compareAnimationFrame = null;
+let compareAnimationPlaying = false;
 
 const WORKER_API_BASE = "https://gentle-hat-70b2.kgf7740.workers.dev";
 
@@ -63,8 +75,8 @@ const percent = new Intl.NumberFormat("en-US", {
   maximumFractionDigits: 2,
 });
 
-function moneyFormatter(options = {}) {
-  const code = selectedStock?.currency || "USD";
+function moneyFormatterFor(stock, options = {}) {
+  const code = stock?.currency || "USD";
   return new Intl.NumberFormat(code === "KRW" ? "ko-KR" : "en-US", {
     style: "currency",
     currency: code,
@@ -73,8 +85,16 @@ function moneyFormatter(options = {}) {
   });
 }
 
+function moneyFormatter(options = {}) {
+  return moneyFormatterFor(selectedStock, options);
+}
+
 function formatMoney(value) {
   return moneyFormatter().format(value);
+}
+
+function formatMoneyFor(value, stock = selectedStock) {
+  return moneyFormatterFor(stock).format(value);
 }
 
 function formatCompactMoney(value) {
@@ -92,6 +112,18 @@ function getMode() {
 
 function getInputType() {
   return document.querySelector("input[name='inputType']:checked").value;
+}
+
+function getSimulationMode() {
+  return document.querySelector("input[name='simulationMode']:checked").value;
+}
+
+function syncSimulationModeUi() {
+  const compareMode = getSimulationMode() === "compare";
+  compareStockField.classList.toggle("hidden", !compareMode);
+  document.querySelectorAll(".single-result").forEach((node) => node.classList.toggle("hidden", compareMode));
+  document.querySelector("#comparePanel").classList.toggle("hidden", !compareMode || !compareFrames.length);
+  document.querySelector(".primary-action span").textContent = compareMode ? "비교하기" : "계산하기";
 }
 
 function syncModeUi() {
@@ -196,13 +228,111 @@ async function requestRemoteSuggestions(query) {
   }
 }
 
+function renderCompareSuggestions() {
+  const query = normalizeQuery(compareSearchInput.value);
+  if (!query) {
+    compareSuggestions.classList.remove("visible");
+    compareSuggestions.innerHTML = "";
+    remoteCompareSuggestions = [];
+    remoteCompareSuggestionsQuery = "";
+    return;
+  }
+
+  if (remoteCompareSuggestionsQuery && remoteCompareSuggestionsQuery !== query) {
+    remoteCompareSuggestions = [];
+  }
+
+  const matches = stocks
+    .filter((stock) => {
+      const haystack = `${stock.symbol} ${stock.name} ${stock.market}`.toLowerCase();
+      return haystack.includes(query);
+    })
+    .slice(0, 7);
+
+  for (const stock of remoteCompareSuggestions) {
+    if (matches.length >= 10) break;
+    if (!matches.some((match) => match.yahoo === stock.yahoo || match.symbol === stock.symbol)) {
+      matches.push(stock);
+    }
+  }
+
+  const customSymbol = query.toUpperCase();
+  if (
+    customSymbol.length >= 1 &&
+    /^[A-Z0-9.-]+$/.test(customSymbol) &&
+    !matches.some((stock) => stock.symbol.toLowerCase() === query)
+  ) {
+    matches.push({
+      symbol: customSymbol,
+      yahoo: customSymbol,
+      name: "직접 입력 티커",
+      market: "Yahoo Finance",
+      currency: "USD",
+      custom: true,
+    });
+  }
+
+  activeCompareSuggestion = -1;
+  compareSuggestions.innerHTML = matches
+    .map(
+      (stock, index) => `
+        <button class="suggestion" type="button" data-index="${index}">
+          <strong>${stock.symbol}</strong> ${stock.name}
+          <span>${stock.market} · ${stock.yahoo}</span>
+        </button>
+      `,
+    )
+    .join("");
+  compareSuggestions.classList.toggle("visible", matches.length > 0);
+  compareSuggestions.querySelectorAll(".suggestion").forEach((button, index) => {
+    button.addEventListener("click", () => selectCompareStock(matches[index]));
+  });
+  requestRemoteCompareSuggestions(query);
+}
+
+async function requestRemoteCompareSuggestions(query) {
+  if (query.length < 2) return;
+  if (remoteCompareSuggestionsQuery === query) return;
+  const requestId = ++compareSearchRequestId;
+
+  try {
+    const url = `${WORKER_API_BASE}/api/search?q=${encodeURIComponent(query)}`;
+    const response = await fetch(url, { cache: "no-store" });
+    if (!response.ok) return;
+    const payload = await response.json();
+    if (requestId !== compareSearchRequestId) return;
+
+    remoteCompareSuggestionsQuery = query;
+    remoteCompareSuggestions = (payload.quotes || []).map((stock) => ({
+      currency: "USD",
+      market: "Yahoo Finance",
+      ...stock,
+      custom: true,
+    }));
+    renderCompareSuggestions();
+  } catch {
+    // Static suggestions and direct ticker input remain available.
+  }
+}
+
 function selectStock(stock) {
   selectedStock = stock;
   searchInput.value = `${stock.symbol} · ${stock.name}`;
-  selectedTitle.textContent = `${stock.name} · ${stock.symbol}`;
+  selectedTitle.textContent =
+    getSimulationMode() === "compare" ? `${selectedStock.symbol} vs ${selectedCompareStock.symbol}` : `${stock.name} · ${stock.symbol}`;
   document.querySelector("#currencyPrefix").textContent = stock.currency === "KRW" ? "₩" : "$";
   suggestions.classList.remove("visible");
   setStatus(`${stock.symbol} 선택됨. 조건을 입력하고 계산하세요.`);
+}
+
+function selectCompareStock(stock) {
+  selectedCompareStock = stock;
+  compareSearchInput.value = `${stock.symbol} · ${stock.name}`;
+  compareSuggestions.classList.remove("visible");
+  if (getSimulationMode() === "compare") {
+    selectedTitle.textContent = `${selectedStock.symbol} vs ${selectedCompareStock.symbol}`;
+    setStatus(`${selectedStock.symbol}와 ${selectedCompareStock.symbol} 비교 조건을 입력하고 계산하세요.`);
+  }
 }
 
 function toDateKey(date) {
@@ -676,6 +806,12 @@ function readOptions() {
 
 function validateOptions(options) {
   if (!selectedStock) throw new Error("종목을 먼저 선택하세요.");
+  if (getSimulationMode() === "compare" && !selectedCompareStock) {
+    throw new Error("비교할 두 번째 종목을 선택하세요.");
+  }
+  if (getSimulationMode() === "compare" && selectedStock.currency !== selectedCompareStock.currency) {
+    throw new Error("통화가 같은 종목끼리만 비교할 수 있습니다.");
+  }
   if (!options.startDate) throw new Error("최초 매수일을 입력하세요.");
   if (options.inputType === "amount" && options.amount <= 0) {
     throw new Error("매수 금액은 0보다 커야 합니다.");
@@ -704,11 +840,134 @@ function adjustStartDateToListing(rows, options) {
   return true;
 }
 
+function adjustStartDateToCompareListing(datasets, options) {
+  const listingDates = datasets.map((item) => item.rows[0]?.date).filter(Boolean);
+  const adjustedDate = listingDates.sort().at(-1);
+  if (!adjustedDate || options.startDate >= adjustedDate) return false;
+
+  const message = `두 종목 중 더 늦은 첫 거래일은 ${adjustedDate}입니다. 같은 조건 비교를 위해 최초 매수일을 ${adjustedDate}로 자동 변경합니다.`;
+  warnUser(message);
+  document.querySelector("#startDate").value = adjustedDate;
+  options.startDate = adjustedDate;
+  setStatus(message);
+  return true;
+}
+
+function buildCompareFrames(resultA, resultB) {
+  const bByDate = new Map(resultB.series.map((point) => [point.date, point]));
+  return resultA.series
+    .map((pointA) => {
+      const pointB = bByDate.get(pointA.date);
+      if (!pointB) return null;
+      return { date: pointA.date, a: pointA, b: pointB };
+    })
+    .filter(Boolean);
+}
+
+function resetCompareAnimation() {
+  if (compareAnimationFrame) cancelAnimationFrame(compareAnimationFrame);
+  compareAnimationFrame = null;
+  compareAnimationPlaying = false;
+  document.querySelector("#comparePlay").textContent = "재생";
+}
+
+function renderCompareFrame(index) {
+  if (!compareFrames.length) return;
+  const frame = compareFrames[Math.max(0, Math.min(compareFrames.length - 1, index))];
+  const latestMaxValue = Math.max(...compareFrames.map((item) => item.a.value), ...compareFrames.map((item) => item.b.value), 1);
+  const gap = frame.a.value - frame.b.value;
+  const leader =
+    Math.abs(gap) < 0.01 ? "동률" : gap > 0 ? selectedStock.symbol : selectedCompareStock.symbol;
+  const progress = compareFrames.length <= 1 ? 100 : (index / (compareFrames.length - 1)) * 100;
+
+  document.querySelector("#compareDate").textContent = frame.date;
+  document.querySelector("#compareProgressFill").style.width = `${progress}%`;
+  document.querySelector("#compareInvested").textContent = formatMoneyFor(Math.max(frame.a.invested, frame.b.invested), selectedStock);
+  document.querySelector("#compareGap").textContent = formatMoneyFor(Math.abs(gap), selectedStock);
+  document.querySelector("#compareLeader").textContent = leader;
+  document.querySelector("#compareASymbol").textContent = selectedStock.symbol;
+  document.querySelector("#compareBSymbol").textContent = selectedCompareStock.symbol;
+  document.querySelector("#compareAValue").textContent = formatMoneyFor(frame.a.value, selectedStock);
+  document.querySelector("#compareBValue").textContent = formatMoneyFor(frame.b.value, selectedCompareStock);
+  document.querySelector("#compareAReturn").textContent = percent.format(frame.a.returnRate);
+  document.querySelector("#compareBReturn").textContent = percent.format(frame.b.returnRate);
+  document.querySelector("#compareAReturn").classList.toggle("positive", frame.a.returnRate >= 0);
+  document.querySelector("#compareAReturn").classList.toggle("negative", frame.a.returnRate < 0);
+  document.querySelector("#compareBReturn").classList.toggle("positive", frame.b.returnRate >= 0);
+  document.querySelector("#compareBReturn").classList.toggle("negative", frame.b.returnRate < 0);
+  document.querySelector("#compareABar").style.width = `${Math.max(2, (frame.a.value / latestMaxValue) * 100)}%`;
+  document.querySelector("#compareBBar").style.width = `${Math.max(2, (frame.b.value / latestMaxValue) * 100)}%`;
+}
+
+function playCompareAnimation() {
+  if (!compareFrames.length) return;
+  resetCompareAnimation();
+  compareAnimationPlaying = true;
+  document.querySelector("#comparePlay").textContent = "일시정지";
+  const duration = 7000;
+  const startedAt = performance.now();
+
+  const step = (now) => {
+    if (!compareAnimationPlaying) return;
+    const ratio = Math.min(1, (now - startedAt) / duration);
+    const index = Math.round(ratio * (compareFrames.length - 1));
+    renderCompareFrame(index);
+    if (ratio < 1) {
+      compareAnimationFrame = requestAnimationFrame(step);
+    } else {
+      compareAnimationPlaying = false;
+      compareAnimationFrame = null;
+      document.querySelector("#comparePlay").textContent = "재생";
+    }
+  };
+
+  compareAnimationFrame = requestAnimationFrame(step);
+}
+
+async function runCompareBacktest(options, button) {
+  resetCompareAnimation();
+  compareFrames = [];
+  button.disabled = true;
+  selectedTitle.textContent = `${selectedStock.symbol} vs ${selectedCompareStock.symbol}`;
+  setStatus(`${selectedStock.symbol}와 ${selectedCompareStock.symbol} 과거 데이터를 불러오는 중입니다.`);
+
+  const [rowsA, dividendsA, rowsB, dividendsB] = await Promise.all([
+    fetchHistory(selectedStock, options.startDate),
+    fetchDividends(selectedStock),
+    fetchHistory(selectedCompareStock, options.startDate),
+    fetchDividends(selectedCompareStock),
+  ]);
+
+  const adjustedStartDate = adjustStartDateToCompareListing(
+    [
+      { stock: selectedStock, rows: rowsA },
+      { stock: selectedCompareStock, rows: rowsB },
+    ],
+    options,
+  );
+  const resultA = simulate(rowsA, dividendsA, options);
+  const resultB = simulate(rowsB, dividendsB, options);
+  compareFrames = buildCompareFrames(resultA, resultB);
+  if (compareFrames.length < 2) throw new Error("두 종목을 비교할 공통 거래일이 부족합니다.");
+
+  document.querySelectorAll(".single-result").forEach((node) => node.classList.add("hidden"));
+  document.querySelector("#comparePanel").classList.remove("hidden");
+  renderCompareFrame(0);
+  playCompareAnimation();
+
+  const prefix = adjustedStartDate ? "상장일 기준으로 최초 매수일을 보정했습니다. " : "";
+  setStatus(`${prefix}${selectedStock.symbol}와 ${selectedCompareStock.symbol} 비교 애니메이션을 생성했습니다.`);
+}
+
 async function runBacktest() {
   const button = form.querySelector("button[type='submit']");
   try {
     const options = readOptions();
     validateOptions(options);
+    if (getSimulationMode() === "compare") {
+      await runCompareBacktest(options, button);
+      return;
+    }
     button.disabled = true;
     setStatus(`${selectedStock.symbol} 과거 데이터를 불러오는 중입니다.`);
     const [rows, dividends] = await Promise.all([
@@ -731,6 +990,16 @@ async function runBacktest() {
   }
 }
 
+simulationModeInputs.forEach((input) =>
+  input.addEventListener("change", () => {
+    resetCompareAnimation();
+    syncSimulationModeUi();
+    selectedTitle.textContent =
+      getSimulationMode() === "compare"
+        ? `${selectedStock.symbol} vs ${selectedCompareStock.symbol}`
+        : `${selectedStock.name} · ${selectedStock.symbol}`;
+  }),
+);
 buyModeInputs.forEach((input) => input.addEventListener("change", syncModeUi));
 inputTypeInputs.forEach((input) => input.addEventListener("change", syncInputTypeUi));
 searchInput.addEventListener("input", renderSuggestions);
@@ -755,12 +1024,46 @@ searchInput.addEventListener("keydown", (event) => {
   }
   items.forEach((item, index) => item.classList.toggle("active", index === activeSuggestion));
 });
+compareSearchInput.addEventListener("input", renderCompareSuggestions);
+compareSearchInput.addEventListener("focus", () => {
+  compareSearchInput.select();
+  renderCompareSuggestions();
+});
+compareSearchInput.addEventListener("keydown", (event) => {
+  const items = [...compareSuggestions.querySelectorAll(".suggestion")];
+  if (!items.length) return;
+  if (event.key === "ArrowDown") {
+    event.preventDefault();
+    activeCompareSuggestion = Math.min(items.length - 1, activeCompareSuggestion + 1);
+  }
+  if (event.key === "ArrowUp") {
+    event.preventDefault();
+    activeCompareSuggestion = Math.max(0, activeCompareSuggestion - 1);
+  }
+  if (event.key === "Enter" && activeCompareSuggestion >= 0) {
+    event.preventDefault();
+    items[activeCompareSuggestion].click();
+  }
+  items.forEach((item, index) => item.classList.toggle("active", index === activeCompareSuggestion));
+});
 document.addEventListener("click", (event) => {
   if (!event.target.closest(".search-field")) suggestions.classList.remove("visible");
+  if (!event.target.closest("#compareStockField")) compareSuggestions.classList.remove("visible");
 });
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   runBacktest();
+});
+document.querySelector("#comparePlay").addEventListener("click", () => {
+  if (compareAnimationPlaying) {
+    resetCompareAnimation();
+  } else {
+    playCompareAnimation();
+  }
+});
+document.querySelector("#compareReset").addEventListener("click", () => {
+  resetCompareAnimation();
+  renderCompareFrame(0);
 });
 chart.addEventListener("mousemove", showTooltip);
 chart.addEventListener("mouseleave", hideTooltip);
@@ -769,6 +1072,8 @@ window.addEventListener("resize", () => {
 });
 
 selectStock(stocks[0]);
+selectCompareStock(stocks[1]);
+syncSimulationModeUi();
 syncModeUi();
 syncInputTypeUi();
 drawChart([

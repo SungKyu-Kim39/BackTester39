@@ -330,6 +330,22 @@ select:focus {
   opacity: 0.7;
 }
 
+.icon-action {
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #0c111a;
+  color: var(--soft);
+  font-weight: 800;
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.icon-action:hover {
+  border-color: rgba(103, 167, 255, 0.6);
+  color: var(--text);
+}
+
 .status {
   margin-top: 18px;
   min-height: 42px;
@@ -418,11 +434,138 @@ select:focus {
 }
 
 .chart-section,
-.table-section {
+.table-section,
+.compare-panel {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(12, 17, 26, 0.58);
   padding: 16px;
+}
+
+.compare-panel {
+  margin: 22px 0 0;
+}
+
+.compare-header,
+.compare-controls,
+.compare-summary,
+.compare-card > div:first-child {
+  display: flex;
+  align-items: center;
+}
+
+.compare-header {
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.compare-header h3 {
+  font-size: 1rem;
+}
+
+.compare-header p,
+.compare-summary span,
+.compare-card span {
+  color: var(--muted);
+}
+
+.compare-header p {
+  margin-top: 4px;
+}
+
+.compare-controls {
+  flex: 0 0 auto;
+  gap: 8px;
+}
+
+.compare-progress {
+  overflow: hidden;
+  height: 8px;
+  border-radius: 999px;
+  background: #0c111a;
+  margin: 18px 0;
+}
+
+.compare-progress span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+.compare-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.compare-summary article,
+.compare-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+  padding: 14px;
+  min-width: 0;
+}
+
+.compare-summary span,
+.compare-card span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.compare-summary strong,
+.compare-card strong {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+}
+
+.compare-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.compare-card > div:first-child {
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.compare-card em {
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.compare-bar {
+  overflow: hidden;
+  height: 12px;
+  border-radius: 999px;
+  background: #0c111a;
+  margin-top: 16px;
+}
+
+.compare-bar span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  margin: 0;
+  border-radius: inherit;
+  transition: width 120ms linear;
+}
+
+.compare-a .compare-bar span {
+  background: var(--accent);
+}
+
+.compare-b .compare-bar span {
+  background: var(--accent-2);
 }
 
 .chart-header h3,
@@ -571,9 +714,24 @@ td {
 
   .topbar,
   .chart-header,
-  .table-header {
+  .table-header,
+  .compare-header,
+  .compare-card > div:first-child {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .compare-controls {
+    width: 100%;
+  }
+
+  .compare-controls .icon-action {
+    flex: 1;
+  }
+
+  .compare-summary,
+  .compare-cards {
+    grid-template-columns: 1fr;
   }
 
   .data-source {
