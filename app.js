@@ -878,7 +878,7 @@ function drawCompareChart(activeIndex = compareFrames.length - 1) {
   const rect = compareChart.getBoundingClientRect();
   const dpr = window.devicePixelRatio || 1;
   compareChart.width = Math.max(800, Math.floor(rect.width * dpr));
-  compareChart.height = Math.max(420, Math.floor(rect.height * dpr));
+  compareChart.height = Math.max(460, Math.floor(rect.height * dpr));
   compareCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
   const width = compareChart.width / dpr;
   const height = compareChart.height / dpr;
@@ -887,7 +887,16 @@ function drawCompareChart(activeIndex = compareFrames.length - 1) {
   const pad = { top: 26, right: 78, bottom: 42, left: 62 };
   const plotW = width - pad.left - pad.right;
   const plotH = height - pad.top - pad.bottom;
+  const gap = 34;
+  const valueH = Math.floor((plotH - gap) * 0.68);
+  const returnH = plotH - gap - valueH;
+  const valueTop = pad.top;
+  const valueBottom = valueTop + valueH;
+  const returnTop = valueBottom + gap;
+  const returnBottom = returnTop + returnH;
   const visibleFrames = compareFrames.slice(0, Math.max(1, activeIndex + 1));
+  const values = compareFrames.flatMap((frame) => [frame.a.value || 0, frame.b.value || 0, frame.a.invested || 0, frame.b.invested || 0]);
+  const maxValue = Math.max(...values, 1) * 1.06;
   const returns = compareFrames.flatMap((frame) => [frame.a.returnRate || 0, frame.b.returnRate || 0]);
   const rawMinReturn = Math.min(0, ...returns);
   const rawMaxReturn = Math.max(0, ...returns);
@@ -897,25 +906,43 @@ function drawCompareChart(activeIndex = compareFrames.length - 1) {
   const minReturn = Math.floor((rawMinReturn - returnPadding) / returnInterval) * returnInterval;
   const maxReturn = Math.ceil((rawMaxReturn + returnPadding) / returnInterval) * returnInterval;
   const xFor = (index) => pad.left + (index / Math.max(1, compareFrames.length - 1)) * plotW;
-  const yFor = (value) => map(value || 0, minReturn, maxReturn, pad.top + plotH, pad.top);
+  const yValue = (value) => map(value || 0, 0, maxValue, valueBottom, valueTop);
+  const yReturn = (value) => map(value || 0, minReturn, maxReturn, returnBottom, returnTop);
 
   compareCtx.font = "12px Inter, system-ui, sans-serif";
   compareCtx.lineWidth = 1;
   compareCtx.strokeStyle = "rgba(255,255,255,0.07)";
   compareCtx.fillStyle = "#91a0b5";
   for (let i = 0; i <= 4; i += 1) {
-    const y = pad.top + (plotH / 4) * i;
+    const y = valueTop + (valueH / 4) * i;
     compareCtx.beginPath();
     compareCtx.moveTo(pad.left, y);
     compareCtx.lineTo(width - pad.right, y);
     compareCtx.stroke();
-    const label = percent.format(map(i, 0, 4, maxReturn, minReturn));
+    const label = formatCompactMoney(map(i, 0, 4, maxValue, 0));
     compareCtx.fillText(label, width - pad.right + 10, y + 4);
   }
 
+  compareCtx.fillStyle = "#91a0b5";
+  compareCtx.fillText("평가액 / 총 투자액", pad.left, valueTop - 8);
+  compareCtx.strokeStyle = "rgba(255,255,255,0.12)";
+  compareCtx.beginPath();
+  compareCtx.moveTo(pad.left, returnTop - gap / 2);
+  compareCtx.lineTo(width - pad.right, returnTop - gap / 2);
+  compareCtx.stroke();
+  compareCtx.fillText("누적 수익률", pad.left, returnTop - 10);
+
+  compareCtx.strokeStyle = "rgba(255,255,255,0.07)";
+  compareCtx.beginPath();
+  compareCtx.moveTo(pad.left, returnTop);
+  compareCtx.lineTo(width - pad.right, returnTop);
+  compareCtx.moveTo(pad.left, returnBottom);
+  compareCtx.lineTo(width - pad.right, returnBottom);
+  compareCtx.stroke();
+
   const firstGuide = Math.ceil(minReturn / returnInterval) * returnInterval;
   for (let value = firstGuide; value <= maxReturn + 0.0001; value += returnInterval) {
-    const y = yFor(value);
+    const y = yReturn(value);
     if (Math.abs(value) < 0.0001) {
       compareCtx.strokeStyle = "rgba(250, 204, 21, 0.9)";
       compareCtx.setLineDash([]);
@@ -928,20 +955,28 @@ function drawCompareChart(activeIndex = compareFrames.length - 1) {
     compareCtx.lineTo(width - pad.right, y);
     compareCtx.stroke();
     compareCtx.setLineDash([]);
+    compareCtx.fillStyle = Math.abs(value) < 0.0001 ? "#fde68a" : "#ff8a8a";
+    compareCtx.fillText(percent.format(value), width - pad.right + 10, y + 4);
   }
 
-  drawCompareLine(visibleFrames, xFor, (frame) => yFor(frame.a.returnRate), "rgba(46, 229, 157, 1)", 2.8);
-  drawCompareLine(visibleFrames, xFor, (frame) => yFor(frame.b.returnRate), "rgba(103, 167, 255, 1)", 2.8);
+  drawCompareLine(visibleFrames, xFor, (frame) => yValue(frame.a.value), "rgba(46, 229, 157, 1)", 2.8);
+  drawCompareLine(visibleFrames, xFor, (frame) => yValue(frame.b.value), "rgba(103, 167, 255, 1)", 2.8);
+  drawCompareLine(visibleFrames, xFor, (frame) => yValue(Math.max(frame.a.invested, frame.b.invested)), "rgba(255, 255, 255, 0.92)", 2.2);
+  drawCompareLine(visibleFrames, xFor, (frame) => yReturn(frame.a.returnRate), "rgba(46, 229, 157, 1)", 2);
+  drawCompareLine(visibleFrames, xFor, (frame) => yReturn(frame.b.returnRate), "rgba(103, 167, 255, 1)", 2);
 
   const activeFrame = compareFrames[Math.max(0, Math.min(compareFrames.length - 1, activeIndex))];
   const activeX = xFor(Math.max(0, Math.min(compareFrames.length - 1, activeIndex)));
   compareCtx.strokeStyle = "rgba(255,255,255,0.2)";
   compareCtx.beginPath();
-  compareCtx.moveTo(activeX, pad.top);
-  compareCtx.lineTo(activeX, pad.top + plotH);
+  compareCtx.moveTo(activeX, valueTop);
+  compareCtx.lineTo(activeX, returnBottom);
   compareCtx.stroke();
-  drawComparePoint(activeX, yFor(activeFrame.a.returnRate), "rgba(46, 229, 157, 1)");
-  drawComparePoint(activeX, yFor(activeFrame.b.returnRate), "rgba(103, 167, 255, 1)");
+  drawComparePoint(activeX, yValue(activeFrame.a.value), "rgba(46, 229, 157, 1)");
+  drawComparePoint(activeX, yValue(activeFrame.b.value), "rgba(103, 167, 255, 1)");
+  drawComparePoint(activeX, yValue(Math.max(activeFrame.a.invested, activeFrame.b.invested)), "rgba(255, 255, 255, 0.92)");
+  drawComparePoint(activeX, yReturn(activeFrame.a.returnRate), "rgba(46, 229, 157, 1)");
+  drawComparePoint(activeX, yReturn(activeFrame.b.returnRate), "rgba(103, 167, 255, 1)");
 
   compareCtx.fillStyle = "#91a0b5";
   const dateSteps = Math.min(5, compareFrames.length - 1);

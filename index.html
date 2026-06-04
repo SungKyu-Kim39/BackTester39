@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>BackTester Dashboard</title>
-    <link rel="stylesheet" href="styles.css?v=20260604-compare-line-2" />
+    <link rel="stylesheet" href="styles.css?v=20260604-compare-dual-chart" />
   </head>
   <body>
     <main class="app-shell">
@@ -191,6 +191,7 @@
             <div class="compare-legend">
               <span><i class="compare-a-dot"></i><b id="compareASymbol">AAPL</b> <em id="compareAReturn">0.00%</em></span>
               <span><i class="compare-b-dot"></i><b id="compareBSymbol">MSFT</b> <em id="compareBReturn">0.00%</em></span>
+              <span><i class="compare-invested-dot"></i><b>총 투자액</b></span>
             </div>
             <div class="compare-chart-wrap">
               <canvas id="compareChart" width="1200" height="620"></canvas>
@@ -243,6 +244,6 @@
       </section>
     </main>
 
-    <script src="app.js?v=20260604-compare-line-2"></script>
+    <script src="app.js?v=20260604-compare-dual-chart"></script>
   </body>
 </html>
